@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DataStructureAndAlgorithm.LinkedList
+namespace DataStructureAndAlgorithm.LinkedLists
 {
     public class Node
     {

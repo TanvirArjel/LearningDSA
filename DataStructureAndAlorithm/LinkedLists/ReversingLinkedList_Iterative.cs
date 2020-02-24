@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataStructureAndAlgorithm.LinkedList
+﻿namespace DataStructureAndAlgorithm.LinkedLists
 {
     public class ReversingLinkedListIterative
     {
-        public LinkedList ReverseLinkedList(LinkedList inputLinkedList)
+        public LinkedLists.LinkedList ReverseLinkedList(LinkedLists.LinkedList inputLinkedList)
         {
             Node previousNode = null, currentNode = inputLinkedList.Head;
             while (currentNode != null)

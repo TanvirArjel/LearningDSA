@@ -1,5 +1,5 @@
 ﻿using System;
-using DataStructureAndAlgorithm.LinkedList;
+using DataStructureAndAlgorithm.LinkedLists;
 
 namespace DataStructureAndAlgorithm
 {
@@ -9,7 +9,7 @@ namespace DataStructureAndAlgorithm
         {
             Console.WriteLine("Original LinkedList");
             Console.WriteLine();
-            LinkedList.LinkedList intLinkedList = new LinkedList.LinkedList();
+            LinkedList intLinkedList = new LinkedList();
             intLinkedList.PopulateLinkedList(10);
             intLinkedList.Print();
 
@@ -20,7 +20,7 @@ namespace DataStructureAndAlgorithm
             Console.WriteLine("Reversed LinkedList");
             Console.WriteLine();
             ReversingLinkedListIterative reversing = new ReversingLinkedListIterative();
-            LinkedList.LinkedList reverseLinkedList = reversing.ReverseLinkedList(intLinkedList);
+            LinkedLists.LinkedList reverseLinkedList = reversing.ReverseLinkedList(intLinkedList);
             reverseLinkedList.Print();
 
 
