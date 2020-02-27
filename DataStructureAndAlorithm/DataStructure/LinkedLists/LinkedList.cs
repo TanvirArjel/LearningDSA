@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructureAndAlgorithm.LinkedLists
+namespace DataStructureAndAlgorithm.DataStructure.LinkedLists
 {
     public class Node
     {

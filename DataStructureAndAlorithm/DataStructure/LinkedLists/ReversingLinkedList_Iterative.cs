@@ -1,8 +1,8 @@
-﻿namespace DataStructureAndAlgorithm.LinkedLists
+﻿namespace DataStructureAndAlgorithm.DataStructure.LinkedLists
 {
     public class ReversingLinkedListIterative
     {
-        public LinkedLists.LinkedList ReverseLinkedList(LinkedLists.LinkedList inputLinkedList)
+        public LinkedList ReverseLinkedList(LinkedList inputLinkedList)
         {
             Node previousNode = null, currentNode = inputLinkedList.Head;
             while (currentNode != null)
