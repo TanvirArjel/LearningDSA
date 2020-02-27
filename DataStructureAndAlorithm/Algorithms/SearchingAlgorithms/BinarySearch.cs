@@ -17,6 +17,12 @@ namespace DataStructureAndAlgorithm.Algorithms.SearchingAlgorithms
                 return -1;
             }
 
+            // Since array is sorted, an element present in array must be in range defined by corner 
+            if (item < array[0] || item > array[array.Length - 1])
+            {
+                return -1;
+            }
+
             int start = 0;
             int end = array.Length - 1;
             while (start <= end)

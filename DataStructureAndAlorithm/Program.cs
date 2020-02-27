@@ -1,4 +1,5 @@
 ﻿using System;
+using DataStructureAndAlgorithm.Algorithms.SearchingAlgorithms;
 using DataStructureAndAlgorithm.Arrays;
 using DataStructureAndAlgorithm.LinkedLists;
 
@@ -9,10 +10,10 @@ namespace DataStructureAndAlgorithm
         static void Main(string[] args)
         {
 
-            int[] array = new[] {5,1, 3, 8, 14, 4, 10, 2, 11};
+            int[] array = new[] {5};
             Array.Sort(array);
 
-            int index = BinarySearch.FindElementInArray(array, 10);
+            int index = InterpolationSearch.FindElementInArray(array, 5);
 
             Console.WriteLine("Item found at: {0}",index);
 
