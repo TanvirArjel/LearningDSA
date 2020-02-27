@@ -1,4 +1,5 @@
 ﻿using System;
+using DataStructureAndAlgorithm.Arrays;
 using DataStructureAndAlgorithm.LinkedLists;
 
 namespace DataStructureAndAlgorithm
@@ -7,22 +8,13 @@ namespace DataStructureAndAlgorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Original LinkedList");
-            Console.WriteLine();
-            LinkedList intLinkedList = new LinkedList();
-            intLinkedList.PopulateLinkedList(10);
-            intLinkedList.Print();
 
+            int[] array = new[] {5,1, 3, 8, 14, 4, 10, 2, 11};
+            Array.Sort(array);
 
-            Console.WriteLine();
-            Console.WriteLine("...............................");
+            int index = BinarySearch.FindElementInArray(array, 10);
 
-            Console.WriteLine("Reversed LinkedList");
-            Console.WriteLine();
-            ReversingLinkedListIterative reversing = new ReversingLinkedListIterative();
-            LinkedLists.LinkedList reverseLinkedList = reversing.ReverseLinkedList(intLinkedList);
-            reverseLinkedList.Print();
-
+            Console.WriteLine("Item found at: {0}",index);
 
             Console.WriteLine();
             Console.WriteLine("...............................");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructureAndAlgorithm
+namespace DataStructureAndAlgorithm.Graph
 {
 
     public class TopologicalSort
