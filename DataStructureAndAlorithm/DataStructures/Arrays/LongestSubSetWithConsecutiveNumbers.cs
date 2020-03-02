@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructureAndAlgorithm.DataStructure.Arrays
+namespace DataStructureAndAlgorithm.DataStructures.Arrays
 {
     // Given a set of numbers, find the longest subset of consecutive numbers.
     // Example:

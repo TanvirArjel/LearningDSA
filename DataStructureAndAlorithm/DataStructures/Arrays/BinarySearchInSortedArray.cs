@@ -1,4 +1,4 @@
-﻿namespace DataStructureAndAlgorithm.DataStructure.Arrays
+﻿namespace DataStructureAndAlgorithm.DataStructures.Arrays
 {
     // 1. Fast search algorithm compared to linear search algorithm.
     // 2. This algorithm is based on divide and conquer strategy to find a number in a sorted integer array.

@@ -1,4 +1,4 @@
-﻿namespace DataStructureAndAlgorithm.DataStructure.LinkedLists
+﻿namespace DataStructureAndAlgorithm.DataStructures.LinkedLists
 {
     public class ReversingLinkedListIterative
     {

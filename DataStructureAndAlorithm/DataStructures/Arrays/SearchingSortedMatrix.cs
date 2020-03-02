@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.DataStructure.Arrays
+namespace DataStructureAndAlgorithm.DataStructures.Arrays
 {
 
     // Given a sorted matrix where rows and the columns are sorted.Write an algorithm to search an element in the matrix in O(n).
