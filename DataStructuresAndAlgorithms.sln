@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructureAndAlgorithm", "DataStructureAndAlorithm\DataStructureAndAlgorithm.csproj", "{20AC0B93-4B0D-4640-B113-D03063A60872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructuresAndAlgorithms", "DataStructuresAndAlgorithms\DataStructuresAndAlgorithms.csproj", "{01E26B5E-8B01-4621-98DE-1814423EBFE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20AC0B93-4B0D-4640-B113-D03063A60872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20AC0B93-4B0D-4640-B113-D03063A60872}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20AC0B93-4B0D-4640-B113-D03063A60872}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20AC0B93-4B0D-4640-B113-D03063A60872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01E26B5E-8B01-4621-98DE-1814423EBFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E26B5E-8B01-4621-98DE-1814423EBFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E26B5E-8B01-4621-98DE-1814423EBFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E26B5E-8B01-4621-98DE-1814423EBFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
