@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.Algorithms.SearchingAlgorithms
+namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
 {
 
     // 1. Improved variant of binary search.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.Dynamic_Programming
+namespace DataStructuresAndAlgorithms.Dynamic_Programming
 {
     // Main purpose of this class to calculate Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of an array of number.
     public class Gcd

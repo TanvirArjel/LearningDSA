@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.Algorithms.SearchingAlgorithms
+namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
 {
     // 1. Fast search algorithm compared to linear search algorithm.
     // 2. This algorithm is based on divide and conquer strategy to find a number in a sorted integer array.

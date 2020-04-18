@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.DataStructures.Arrays
+namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 {
     // Given a sorted integer array which is rotated any number of times, find the pivot index i.e. index of the minimum element of the array.
     // Input: 78,82,99,10,23,35,49,51,60

@@ -22,10 +22,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree
     // Time Complexity is O(n)
     // Space Complexity is : O(1)
 
-    public class BinrayTree
+    public class BinaryTree
     {
         private TreeNode root;
-        public BinrayTree()
+        public BinaryTree()
         {
             // Initializing or Creating the Binary Sample Binray Tree here
             root = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), new TreeNode(7)));
@@ -37,51 +37,49 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree
         //}
         class TreeNode
         {
-            private int Data { get; set; }
-            private TreeNode LeftNode { get; set; }
-            private TreeNode RightNode { get; set; }
+            private int data;
+            public int Data
+            {
+                get { return data; }
+            }
+            private TreeNode leftNode;
+            public TreeNode LeftNode
+            {
+                get { return leftNode; }
+            }
+
+            private TreeNode rightNode;
+            public TreeNode RightNode
+            {
+                get { return rightNode; }
+            }
 
             // This constructor is for creating parent node.
             public TreeNode(int data, TreeNode leftNode, TreeNode rightNode)
             {
-                Data = data;
-                LeftNode = leftNode;
-                RightNode = rightNode;
+                this.data = data;
+                this.leftNode = leftNode;
+                this.rightNode = rightNode;
             }
 
             // This constructor is for creating leaf node.
             public TreeNode(int data)
             {
-                Data = data;
-            }
-
-            public int GetData()
-            {
-                return Data;
+                this.data = data;
             }
             public void SetData(int data)
             {
-                Data = data;
+                this.data = data;
             }
 
             public void SetLeftNode(TreeNode node)
             {
-                LeftNode = node;
-            }
-
-            public TreeNode GetLeftNode()
-            {
-                return LeftNode;
+                this.leftNode = node;
             }
 
             public void SetRightNode(TreeNode right)
             {
-                RightNode = right;
-            }
-
-            public TreeNode GetRightNode()
-            {
-                return RightNode;
+                this.rightNode = right;
             }
         }
 
@@ -97,9 +95,9 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree
             {
                 return;
             }
-            Console.WriteLine(node.GetData());
-            PrintPreOrder(node.GetLeftNode());
-            PrintPreOrder(node.GetRightNode());
+            Console.WriteLine(node.Data);
+            PrintPreOrder(node.LeftNode);
+            PrintPreOrder(node.RightNode);
         }
     }
 }

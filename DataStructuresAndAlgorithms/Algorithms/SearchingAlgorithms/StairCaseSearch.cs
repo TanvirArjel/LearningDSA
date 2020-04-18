@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructureAndAlgorithm.Algorithms.SearchingAlgorithms
+namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
 {
     // 1. Stair Case Search algorithm is used to find an element in a 2 dimensional array or matrix in most efficient way.
     // 2. Time complexity of this algorithm is: O(n)
