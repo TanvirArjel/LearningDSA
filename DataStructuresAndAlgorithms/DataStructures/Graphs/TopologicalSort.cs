@@ -1,10 +1,13 @@
-﻿using System;
+﻿// <copyright file="TopologicalSort.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Graph
+namespace DataStructuresAndAlgorithms.DataStructures.Graphs
 {
-
-    public class TopologicalSort
+    public static class TopologicalSort
     {
         public static void DoTopologicalSort()
         {
@@ -30,18 +33,27 @@ namespace DataStructuresAndAlgorithms.DataStructures.Graph
 
     public class GraphNode
     {
-        public int NodeId;
-        public GraphNode NextNode;
+        private readonly int nodeId;
 
         public GraphNode(int id)
         {
-            NodeId = id;
+            nodeId = id;
+        }
+
+        public GraphNode NextNode { get; set; }
+
+        public int NodeId
+        {
+            get
+            {
+                return nodeId;
+            }
         }
     }
 
     public class Graph
     {
-        private List<GraphNode> _nodeList = new List<GraphNode>();
+        private readonly List<GraphNode> _nodeList = new List<GraphNode>();
 
         // adding edge from id1 to id2
         // if either of these does not exist then create and add
@@ -67,15 +79,14 @@ namespace DataStructuresAndAlgorithms.DataStructures.Graph
             node1.NextNode = temp;
         }
 
-
         public void PrintTopoSortedNodes()
         {
             Dictionary<int, int> nodeInDegrees = new Dictionary<int, int>();
             List<GraphNode> zeroDegreeNodes = new List<GraphNode>();
-            List<GraphNode> nodes = this._nodeList;
+            List<GraphNode> nodes = _nodeList;
 
             // this for loop counts the in-degrees for all nodes.
-            // adds nodes having in-degree > 0 to in-Degrees dictionary 
+            // adds nodes having in-degree > 0 to in-Degrees dictionary
             for (int i = 0; i < nodes.Count; i++)
             {
                 GraphNode currentNode = nodes[i];
@@ -94,13 +105,12 @@ namespace DataStructuresAndAlgorithms.DataStructures.Graph
             {
                 GraphNode graphNode = nodes[i];
 
-                // nodes with zero indegree would not be in the dictionary 
+                // nodes with zero indegree would not be in the dictionary
                 // since they are not in anyone's neighbor list
                 if (!nodeInDegrees.ContainsKey(graphNode.NodeId))
                 {
                     zeroDegreeNodes.Add(graphNode);
                 }
-
             }
 
             // take out a node from zeroDegree list
@@ -110,10 +120,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.Graph
                 GraphNode currentNode = zeroDegreeNodes[0];
                 zeroDegreeNodes.RemoveAt(0);
 
-                // print topo sort: output! 
+                // print topo sort: output!
                 Console.WriteLine(currentNode.NodeId);
 
                 GraphNode nextNode = currentNode.NextNode;
+
                 // update the in-degree for all the neighbors of the current vertex
                 while (nextNode != null)
                 {
@@ -125,11 +136,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.Graph
                         GraphNode zeroDegreeNode = _nodeList.Find(x => x.NodeId == nextNode.NodeId);
                         zeroDegreeNodes.Add(zeroDegreeNode);
                     }
+
                     nextNode = nextNode.NextNode;
                 }
             }
-
         }
-
     }
 }

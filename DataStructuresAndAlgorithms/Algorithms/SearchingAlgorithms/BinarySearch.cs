@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// <copyright file="BinarySearch.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
 
 namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
 {
@@ -8,7 +8,7 @@ namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
     // 2. This algorithm is based on divide and conquer strategy to find a number in a sorted integer array.
     // 3. Binary search looks for an particular item by comparing the middle most item of the collection.
     // 4. Time complexity of this algorithm is: O(log(n)).
-    public class BinarySearch
+    public static class BinarySearch
     {
         public static int FindElementInArray(int[] array, int item)
         {
@@ -17,7 +17,7 @@ namespace DataStructuresAndAlgorithms.Algorithms.SearchingAlgorithms
                 return -1;
             }
 
-            // Since array is sorted, an element present in array must be in range defined by corner 
+            // Since array is sorted, an element present in array must be in range defined by corner.
             if (item < array[0] || item > array[array.Length - 1])
             {
                 return -1;

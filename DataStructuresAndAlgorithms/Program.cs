@@ -1,11 +1,15 @@
-﻿using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree;
+﻿// <copyright file="Program.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
 using System;
+using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees;
 
 namespace DataStructuresAndAlgorithms
 {
-    static class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             BinaryTree binaryTree = new BinaryTree();
             binaryTree.PrintPreOrder();

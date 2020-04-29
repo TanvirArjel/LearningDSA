@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="LongestSubSetWithConsecutiveNumbers.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Arrays
@@ -7,16 +11,21 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
     // Example:
     // Input: 1 3 8 14 4 10 2 11
     // Output: 1 2 3 4
-    public class LSCN
+    public static class LSCN
     {
         public static int[] FindLscn(int[] inputArray)
         {
+            if (inputArray == null)
+            {
+                throw new ArgumentNullException("inputArray");
+            }
+
             Array.Sort(inputArray);
             List<int> longestSubset = new List<int>();
             List<int> currentSubset = new List<int>();
 
-            Dictionary<int,int> hash = new Dictionary<int, int>();
-            
+            Dictionary<int, int> hash = new Dictionary<int, int>();
+
             for (int i = 0; i < inputArray.Length; i++)
             {
                 if (!hash.ContainsKey(inputArray[i]))
@@ -25,7 +34,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                     currentSubset.Add(inputArray[i]);
                     hash.Add(inputArray[i], inputArray[i]);
 
-                    int expectedNextValue = inputArray[i]  + 1;
+                    int expectedNextValue = inputArray[i] + 1;
                     while (Array.Exists(inputArray, a => a == expectedNextValue))
                     {
                         currentSubset.Add(expectedNextValue);
@@ -38,7 +47,6 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                         longestSubset = new List<int>(currentSubset);
                     }
                 }
-                
             }
 
             return longestSubset.ToArray();

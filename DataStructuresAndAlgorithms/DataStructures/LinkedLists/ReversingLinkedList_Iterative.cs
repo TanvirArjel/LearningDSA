@@ -1,9 +1,20 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
+﻿// <copyright file="ReversingLinkedList_Iterative.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
+
+namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
-    public class ReversingLinkedListIterative
+    public static class ReversingLinkedListIterative
     {
-        public LinkedList ReverseLinkedList(LinkedList inputLinkedList)
+        public static LinkedList ReverseLinkedList(LinkedList inputLinkedList)
         {
+            if (inputLinkedList == null)
+            {
+                throw new ArgumentNullException("inputLinkedList");
+            }
+
             Node previousNode = null, currentNode = inputLinkedList.Head;
             while (currentNode != null)
             {
@@ -11,7 +22,7 @@
                 currentNode.Next = previousNode; // Now change next of current, This is where actual reversing happens
 
                 // Move previous and current one step forward
-                previousNode = currentNode; 
+                previousNode = currentNode;
                 currentNode = originalNext;
             }
 

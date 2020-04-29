@@ -1,10 +1,14 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Arrays
+﻿// <copyright file="BinarySearchInSortedArray.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 {
     // 1. Fast search algorithm compared to linear search algorithm.
     // 2. This algorithm is based on divide and conquer strategy to find a number in a sorted integer array.
     // 3. Binary search looks for an particular item by comparing the middle most item of the collection.
     // 4. Time complexity of this algorithm is: O(log(n)).
-    public class BinarySearch
+    public static class BinarySearch
     {
         public static int FindElementInArray(int[] array, int item)
         {
