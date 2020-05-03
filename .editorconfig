@@ -38,3 +38,6 @@ dotnet_diagnostic.SA1309.severity = none
 
 # CA1814: Prefer jagged arrays over multidimensional
 dotnet_diagnostic.CA1814.severity = none
+
+# CA1812: T is an internal class that is apparently never instantiated.
+dotnet_diagnostic.CA1812.severity = none

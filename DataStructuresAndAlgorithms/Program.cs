@@ -3,7 +3,8 @@
 // </copyright>
 
 using System;
-using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees;
+using System.Collections.Generic;
+using DataStructuresAndAlgorithms.DataStructures.Arrays;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -11,8 +12,10 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            BinaryTree binaryTree = new BinaryTree();
-            binaryTree.PrintPreOrder();
+            int[] inputArray1 = { 2, 4, 1, 2, 6, 1, 6, 13, 13 };
+            // int[] inputArray2 = { 1, 2, 3 };
+            HashSet<int> hashSet = FindDuplicatesInArray.GetDuplicatesDictionary(inputArray1);
+            Console.WriteLine(hashSet.ToString());
             Console.WriteLine("...............................");
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
