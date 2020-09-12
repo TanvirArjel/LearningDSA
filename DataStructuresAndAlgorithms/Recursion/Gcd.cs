@@ -2,7 +2,7 @@
 // Copyright (c) TanvirArjel. All rights reserved.
 // </copyright>
 
-namespace DataStructuresAndAlgorithms.DynamicProgramming
+namespace DataStructuresAndAlgorithms.Recursion
 {
     // Main purpose of this class to calculate Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of an array of number.
     public static class Gcd

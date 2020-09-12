@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 {
@@ -35,7 +34,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
             return result;
         }
 
-        // Time Complexity: O(nxm) where n is the number of item in the array and m is unique count of the items.
+        // Time Complexity: O(n) where n is the number of item in the array.
         public static int GetNumberOccuringOddNumberOfTimesWithDictionary(int[] inputArray)
         {
             if (inputArray == null || inputArray.Length == 0)
@@ -47,10 +46,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 
             for (int i = 0; i < inputArray.Length; i++)
             {
-                if (numberDictionary.ContainsKey(inputArray[i]))
+                int currentKey = inputArray[i];
+                int currentValue;
+                if (numberDictionary.TryGetValue(currentKey, out currentValue))
                 {
-                    KeyValuePair<int, int> item = numberDictionary.First(d => d.Key == inputArray[i]);
-                    numberDictionary[inputArray[i]] = item.Value + 1;
+                    numberDictionary[currentKey] = currentValue + 1;
                 }
                 else
                 {

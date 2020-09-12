@@ -41,3 +41,12 @@ dotnet_diagnostic.CA1814.severity = none
 
 # CA1812: T is an internal class that is apparently never instantiated.
 dotnet_diagnostic.CA1812.severity = none
+
+# CA1710: Identifiers should have correct suffix
+dotnet_diagnostic.CA1710.severity = none
+
+# SA1128: Put constructor initializers on their own line
+dotnet_diagnostic.SA1128.severity = none
+
+# CA2227: Collection properties should be read only
+dotnet_diagnostic.CA2227.severity = none

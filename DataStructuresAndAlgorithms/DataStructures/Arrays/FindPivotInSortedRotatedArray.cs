@@ -12,17 +12,24 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
         // With Linear Search, Time Complexity is : O(n)
         public static int WithLinearSearch(int[] array)
         {
-            int pivotIndex = -1;
-            if (array != null && array.Length > 0)
+            if (array == null || array.Length == 0)
             {
-                pivotIndex = 0;
-                for (int i = 0; i < array.Length - 1; i++)
+                return -1;
+            }
+
+            // If array contains one element or array is not rotated, then first index is the pivot.
+            if (array.Length == 1 || array[0] < array[array.Length - 1])
+            {
+                return 0;
+            }
+
+            int pivotIndex = 0;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i + 1])
                 {
-                    if (array[i] > array[i + 1])
-                    {
-                        pivotIndex = i + 1;
-                        break;
-                    }
+                    pivotIndex = i + 1;
+                    break;
                 }
             }
 
@@ -49,15 +56,15 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                 int mid = (start + end) / 2;
 
                 // check if mid+1 is pivot
-                if (mid < array.Length - 1 && array[mid] > array[mid + 1])
+                if (array[mid] < array[mid - 1])
                 {
-                    return mid + 1;
+                    return mid;
                 }
 
+                // If array[start] <= array[mid],it means from start to mid, all elements are in sorted order,
+                // so pivot will be in second half
                 if (array[start] <= array[mid])
                 {
-                    // If array[start] <= array[mid],it means from start to mid, all elements are in sorted order,
-                    // so pivot will be in second half
                     start = mid + 1;
                 }
                 else
