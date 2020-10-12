@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees;
+using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals;
 
 namespace DataStructuresAndAlgorithms
 {

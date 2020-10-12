@@ -1,32 +1,32 @@
-﻿// <copyright file="PostOrderTraversal.cs" company="TanvirArjel">
+﻿// <copyright file="InOrderTraversal.cs" company="TanvirArjel">
 // Copyright (c) TanvirArjel. All rights reserved.
 // </copyright>
 
 using System;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
 {
-    // Problem: Given a Binary Tree, print the nodes of a binary tree in a post-order fashion.
+    // Problem: Given a Binary Tree, print the nodes of a binary tree in a in-order fashion.
     // Input: Sample tree
     //              1
     //       2              3
     //   4       5       6       7
 
-    // Output : 4 5 2 6 7 3 1
+    // Output : 4 2 5 1 6 3 7
 
     // Algorithms:
     // In the post-order traversal for a given node 'n',
     // 1. We first traverse left-subtree of 'n' by calling printPostorder(n.left)
-    // 2. Then we traverse right-subtree of 'n' by calling printPostorder(n.right)
-    // 3. And finally we visit node 'n' itself.
+    // 2. Then finally we visit node 'n' itself.
+    // 2. And finally we traverse right-subtree of 'n' by calling printPostorder(n.right)
 
     // Time Complexity is O(n)
     // Space Complexity is : O(1)
-    public class PostOrderTraversal
+    public class InOrderTraversal
     {
         private readonly BinaryTree<int> _binaryTree = new BinaryTree<int>();
 
-        public PostOrderTraversal()
+        public InOrderTraversal()
         {
             // Initializing or Creating the Sample Binray Tree here
             _binaryTree.Root = new BinaryTreeNode<int>(
@@ -35,21 +35,21 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees
                 new BinaryTreeNode<int>(3, new BinaryTreeNode<int>(6), new BinaryTreeNode<int>(7)));
         }
 
-        public void PrintPostOrder()
+        public void PrintInOrder()
         {
-            PrintPostOrder(_binaryTree.Root);
+            PrintInOrder(_binaryTree.Root);
         }
 
-        public void PrintPostOrder<T>(BinaryTreeNode<T> node)
+        public void PrintInOrder<T>(BinaryTreeNode<T> node)
         {
             if (node == null)
             {
                 return;
             }
 
-            PrintPostOrder(node.LeftNode);
-            PrintPostOrder(node.RightNode);
+            PrintInOrder(node.LeftNode);
             Console.Write(node.Value + " ");
+            PrintInOrder(node.RightNode);
         }
     }
 }

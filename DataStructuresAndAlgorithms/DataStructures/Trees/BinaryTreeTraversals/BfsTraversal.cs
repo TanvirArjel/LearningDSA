@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
 {
     internal static class BfsTraversal
     {

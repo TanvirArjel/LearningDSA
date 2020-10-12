@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
 {
     internal class DfsTraversal
     {

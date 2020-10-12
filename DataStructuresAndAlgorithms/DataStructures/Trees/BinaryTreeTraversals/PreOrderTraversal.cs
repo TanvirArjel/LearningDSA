@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTrees
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
 {
     // Problem: Given a Binary Tree, print the nodes of a binary tree in a pre-order fashion.
     // Input: Sample tree
