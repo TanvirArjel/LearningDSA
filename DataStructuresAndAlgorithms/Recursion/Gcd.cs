@@ -18,7 +18,7 @@ namespace DataStructuresAndAlgorithms.Recursion
             int result = arr[0];
             for (int i = 1; i < arr.Length; i++)
             {
-                result = FindGcd(result, arr[i]);
+                result = FindGcdUsingEuclidAlgo(result, arr[i]);
 
                 if (result == 1)
                 {
@@ -29,13 +29,32 @@ namespace DataStructuresAndAlgorithms.Recursion
             return result;
         }
 
-        // Function to return gcd of a and b . This approach is called Euclidean algorithm.
-        private static int FindGcd(int a, int b)
+        // Euclidean algorithm
+        private static int FindGcdUsingEuclidAlgo(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+
+        // Function to return gcd of a and b
+        private static int FindGcdUsingRecursion(int a, int b)
         {
             // If two numbers are equal then any of them is their GCD or HCF
             if (a == b)
             {
                 return a;
+            }
+
+            // If any of them is 1  then 1  is the GCD between them.
+            if (a == 1 || b == 1)
+            {
+                return 1;
             }
 
             // If any of them is zero then other number is the GCD or HCF of them because everything divides 0.
@@ -52,10 +71,10 @@ namespace DataStructuresAndAlgorithms.Recursion
             // GCD of two numbers does not change if smaller number is subtracted from a bigger number.
             if (a > b)
             {
-                return FindGcd(a - b, b);
+                return FindGcdUsingRecursion(a - b, b);
             }
 
-            return FindGcd(a, b - a);
+            return FindGcdUsingRecursion(a, b - a);
         }
     }
 }

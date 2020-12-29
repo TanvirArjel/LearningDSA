@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals;
+using DataStructuresAndAlgorithms.Recursion;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,8 +13,9 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            PostOrderTraversal postOrderTraversal = new PostOrderTraversal();
-            postOrderTraversal.PrintPostOrder();
+            int[] numbers = new[] { 0, 4 };
+            int result = Lcm.FindLcmUsingGcd(numbers);
+            Console.WriteLine("The LCM is: {0}", result);
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 
