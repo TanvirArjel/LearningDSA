@@ -31,14 +31,19 @@ namespace DataStructuresAndAlgorithms.Recursion
                 return 0;
             }
 
-            int gcd = Gcd.FindGcd(numbers);
-            int mult = numbers[0];
+            int result = numbers[0];
+
             for (int i = 1; i < numbers.Length; i++)
             {
-                mult *= numbers[i];
+                result = FindLcmUsingGcd(result, numbers[i]);
             }
 
-            return mult / gcd;
+            return result;
+        }
+
+        private static int FindLcmUsingGcd(int a, int b)
+        {
+            return a * (b / FindLcmUsingGcd(a, b));
         }
 
         private static int FindLcm(int a, int b)

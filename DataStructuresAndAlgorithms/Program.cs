@@ -13,7 +13,7 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] numbers = new[] { 0, 4 };
+            int[] numbers = new[] { 3, 127 };
             int result = Lcm.FindLcmUsingGcd(numbers);
             Console.WriteLine("The LCM is: {0}", result);
             Console.WriteLine("Learning Data Structure And Algorithms");
