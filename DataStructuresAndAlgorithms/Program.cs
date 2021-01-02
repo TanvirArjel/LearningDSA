@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.Recursion;
+using DataStructuresAndAlgorithms.DataStructures.Arrays;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,9 +13,13 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] numbers = new[] { 3, 127 };
-            int result = Lcm.FindLcmUsingGcd(numbers);
-            Console.WriteLine("The LCM is: {0}", result);
+            int[] numbers = new[] { 1, 2, 3, 4, 5 };
+            ArrayRotation.RotateArrayUsingReversal(numbers, 100);
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 

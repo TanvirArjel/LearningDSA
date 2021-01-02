@@ -43,7 +43,7 @@ namespace DataStructuresAndAlgorithms.Recursion
 
         private static int FindLcmUsingGcd(int a, int b)
         {
-            return a * (b / FindLcmUsingGcd(a, b));
+            return a * (b / Gcd.FindGcd(a, b));
         }
 
         private static int FindLcm(int a, int b)

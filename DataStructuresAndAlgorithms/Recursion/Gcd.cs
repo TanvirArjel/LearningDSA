@@ -29,6 +29,11 @@ namespace DataStructuresAndAlgorithms.Recursion
             return result;
         }
 
+        public static int FindGcd(int a, int b)
+        {
+            return FindGcdUsingEuclidAlgo(a, b);
+        }
+
         // Euclidean algorithm
         private static int FindGcdUsingEuclidAlgo(int a, int b)
         {
