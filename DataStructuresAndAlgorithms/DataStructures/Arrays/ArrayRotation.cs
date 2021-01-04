@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="ArrayRotation.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 {

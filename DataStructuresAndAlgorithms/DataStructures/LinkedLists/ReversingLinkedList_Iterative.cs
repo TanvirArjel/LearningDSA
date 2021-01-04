@@ -15,10 +15,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 throw new ArgumentNullException("inputLinkedList");
             }
 
-            Node previousNode = null, currentNode = inputLinkedList.Head;
+            LinkedListNode<int> previousNode = null, currentNode = inputLinkedList.Head;
             while (currentNode != null)
             {
-                Node originalNext = currentNode.Next; // Before changing next of current, store next node
+                LinkedListNode<int> originalNext = currentNode.Next; // Before changing next of current, store next node
                 currentNode.Next = previousNode; // Now change next of current, This is where actual reversing happens
 
                 // Move previous and current one step forward

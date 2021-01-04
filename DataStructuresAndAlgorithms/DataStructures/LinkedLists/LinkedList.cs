@@ -6,19 +6,6 @@ using System;
 
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
-    public class Node
-    {
-        public Node(int dataValue)
-        {
-            this.Data = dataValue;
-            this.Next = null;
-        }
-
-        public int Data { get; set; }
-
-        public Node Next { get; set; }
-    }
-
     public class LinkedList
     {
         public LinkedList()
@@ -26,35 +13,22 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             this.Head = null;
         }
 
-        public Node Head { get; set; }
-
-        public void AddSorted(int data)
-        {
-            if (Head == null)
-            {
-                Head = new Node(data);
-            }
-            else if (data < Head.Data)
-            {
-                AddToStart(data);
-            }
-            else
-            {
-                this.AddSortedWithRecursion(Head, data);
-            }
-        }
+        public LinkedListNode<int> Head { get; set; }
 
         public void AddToStart(int data)
         {
             if (Head == null)
             {
-                Head = new Node(data);
+                Head = new LinkedListNode<int>(data);
             }
             else
             {
-                Node tempNode = new Node(data);
-                tempNode.Next = Head;
-                Head = tempNode;
+                LinkedListNode<int> newNode = new LinkedListNode<int>(data)
+                {
+                    Next = Head
+                };
+
+                Head = newNode;
             }
         }
 
@@ -62,11 +36,27 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             if (Head == null)
             {
-                Head = new Node(data);
+                Head = new LinkedListNode<int>(data);
             }
             else
             {
-                AddToEndWithRecursion(Head, data);
+                AddToEndWithWhile(Head, data);
+            }
+        }
+
+        public void AddSorted(int data)
+        {
+            if (Head == null)
+            {
+                Head = new LinkedListNode<int>(data);
+            }
+            else if (data < Head.Value)
+            {
+                AddToStart(data);
+            }
+            else
+            {
+                this.AddSortedWithRecursion(Head, data);
             }
         }
 
@@ -78,10 +68,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
 
             int i = 1;
-            Node currentNode = null;
+            LinkedListNode<int> currentNode = null;
             while (i <= size)
             {
-                Node newNode = new Node(i);
+                LinkedListNode<int> newNode = new LinkedListNode<int>(i);
                 if (Head == null)
                 {
                     Head = newNode;
@@ -105,29 +95,31 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             if (Head != null)
             {
-                Node currentNode = Head;
+                LinkedListNode<int> currentNode = Head;
                 while (currentNode != null)
                 {
-                    Console.Write("|" + currentNode.Data + "|->");
+                    Console.Write("|" + currentNode.Value + "|->");
                     currentNode = currentNode.Next;
                 }
             }
             else
             {
-                Console.WriteLine("The LinkedList is empty. Please add some nodes the LinkedList.");
+                Console.WriteLine("The LinkedList is empty. Please add some nodes to the LinkedList.");
             }
         }
 
-        private void AddSortedWithRecursion(Node node, int data)
+        private void AddSortedWithRecursion(LinkedListNode<int> node, int data)
         {
             if (node.Next == null)
             {
-                node.Next = new Node(data);
+                node.Next = new LinkedListNode<int>(data);
             }
-            else if (data < node.Next.Data)
+            else if (data < node.Next.Value)
             {
-                Node tempNode = new Node(data);
-                tempNode.Next = node.Next;
+                LinkedListNode<int> tempNode = new LinkedListNode<int>(data)
+                {
+                    Next = node.Next
+                };
                 node.Next = tempNode;
             }
             else
@@ -136,15 +128,42 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
         }
 
-        private void AddToEndWithRecursion(Node node, int data)
+        private void AddToEndWithRecursion(LinkedListNode<int> node, int data)
         {
-            if (node.Next == null)
+            if (node != null)
             {
-                node.Next = new Node(data);
+                if (node.Next == null)
+                {
+                    node.Next = new LinkedListNode<int>(data);
+                }
+                else
+                {
+                    this.AddToEndWithRecursion(node.Next, data);
+                }
             }
             else
             {
-                this.AddToEndWithRecursion(node.Next, data);
+                Head = new LinkedListNode<int>(data);
+                return;
+            }
+        }
+
+        private void AddToEndWithWhile(LinkedListNode<int> head, int data)
+        {
+            if (head != null)
+            {
+                LinkedListNode<int> currentNode = head;
+
+                while (currentNode.Next != null)
+                {
+                    currentNode = currentNode.Next;
+                }
+
+                currentNode.Next = new LinkedListNode<int>(data);
+            }
+            else
+            {
+                Head = new LinkedListNode<int>(data);
             }
         }
     }

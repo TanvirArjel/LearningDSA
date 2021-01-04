@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Arrays;
+using DataStructuresAndAlgorithms.DataStructures.LinkedLists;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,13 +13,14 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] numbers = new[] { 1, 2, 3, 4, 5 };
-            ArrayRotation.RotateArrayUsingReversal(numbers, 100);
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                Console.WriteLine(numbers[i]);
-            }
+            LinkedList list = new LinkedList();
+            list.AddToEnd(1);
+            list.AddToEnd(2);
+            list.AddToEnd(3);
+            list.AddToEnd(4);
 
+            list.Print();
+            Console.WriteLine(string.Empty);
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 
