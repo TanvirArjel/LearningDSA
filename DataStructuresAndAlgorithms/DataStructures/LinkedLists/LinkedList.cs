@@ -37,11 +37,131 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             if (Head == null)
             {
                 Head = new LinkedListNode<int>(data);
+                return;
+            }
+
+            LinkedListNode<int> currentNode = Head;
+
+            while (currentNode.Next != null)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            currentNode.Next = new LinkedListNode<int>(data);
+        }
+
+        public void AddToEndWithRecursion(LinkedListNode<int> head, int data)
+        {
+            if (head == null)
+            {
+                Head = new LinkedListNode<int>(data);
+                return;
+            }
+
+            if (head.Next == null)
+            {
+                head.Next = new LinkedListNode<int>(data);
             }
             else
             {
-                AddToEndWithWhile(Head, data);
+                AddToEndWithRecursion(head.Next, data);
             }
+        }
+
+        public void Insert(int data, int position)
+        {
+            LinkedListNode<int> newNode = new LinkedListNode<int>(data);
+
+            if (position == 1)
+            {
+                newNode.Next = Head;
+                Head = newNode;
+                return;
+            }
+
+            LinkedListNode<int> tempNode = Head;
+            for (int i = 1; i < position - 1; i++)
+            {
+                tempNode = tempNode.Next;
+            }
+
+            newNode.Next = tempNode.Next;
+            tempNode.Next = newNode;
+        }
+
+        public void DeleteByData(int data)
+        {
+            if (Head == null)
+            {
+                return;
+            }
+
+            if (Head.Value == data)
+            {
+                Head = null;
+                return;
+            }
+
+            LinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
+
+            while (prevNodeOfNodeToBeDeleted.Next != null)
+            {
+                if (prevNodeOfNodeToBeDeleted.Next.Value == data)
+                {
+                    LinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
+                    prevNodeOfNodeToBeDeleted.Next = tempNode;
+                    return;
+                }
+
+                prevNodeOfNodeToBeDeleted = prevNodeOfNodeToBeDeleted.Next;
+            }
+        }
+
+        public void DeleteByIndex(int index)
+        {
+            if (Head == null)
+            {
+                return;
+            }
+
+            if (index == 0)
+            {
+                Head = Head.Next;
+                return;
+            }
+
+            LinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
+
+            for (int i = 0; i < index - 1; i++)
+            {
+                prevNodeOfNodeToBeDeleted = prevNodeOfNodeToBeDeleted.Next;
+                if (prevNodeOfNodeToBeDeleted == null)
+                {
+                    return;
+                }
+            }
+
+            if (prevNodeOfNodeToBeDeleted.Next != null)
+            {
+                LinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
+                prevNodeOfNodeToBeDeleted.Next = tempNode;
+            }
+        }
+
+        public LinkedListNode<int> Delete(LinkedListNode<int> head, int position)
+        {
+            if (head == null)
+            {
+                return head;
+            }
+
+            if (position == 0)
+            {
+                return head.Next;
+            }
+
+            head.Next = Delete(head.Next, position - 1);
+            return head;
         }
 
         public void AddSorted(int data)
@@ -98,7 +218,15 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 LinkedListNode<int> currentNode = Head;
                 while (currentNode != null)
                 {
-                    Console.Write("|" + currentNode.Value + "|->");
+                    if (currentNode.Next != null)
+                    {
+                        Console.Write("|" + currentNode.Value + "|->");
+                    }
+                    else
+                    {
+                        Console.Write("|" + currentNode.Value + "|");
+                    }
+
                     currentNode = currentNode.Next;
                 }
             }
@@ -125,45 +253,6 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             else
             {
                 this.AddSortedWithRecursion(node.Next, data);
-            }
-        }
-
-        private void AddToEndWithRecursion(LinkedListNode<int> node, int data)
-        {
-            if (node != null)
-            {
-                if (node.Next == null)
-                {
-                    node.Next = new LinkedListNode<int>(data);
-                }
-                else
-                {
-                    this.AddToEndWithRecursion(node.Next, data);
-                }
-            }
-            else
-            {
-                Head = new LinkedListNode<int>(data);
-                return;
-            }
-        }
-
-        private void AddToEndWithWhile(LinkedListNode<int> head, int data)
-        {
-            if (head != null)
-            {
-                LinkedListNode<int> currentNode = head;
-
-                while (currentNode.Next != null)
-                {
-                    currentNode = currentNode.Next;
-                }
-
-                currentNode.Next = new LinkedListNode<int>(data);
-            }
-            else
-            {
-                Head = new LinkedListNode<int>(data);
             }
         }
     }
