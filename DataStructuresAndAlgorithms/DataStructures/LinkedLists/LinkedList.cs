@@ -89,6 +89,44 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             tempNode.Next = newNode;
         }
 
+        public LinkedListNode<int> ReverseIterative(LinkedListNode<int> head)
+        {
+            LinkedListNode<int> current = head;
+            LinkedListNode<int> prev = null;
+
+            while (current != null)
+            {
+                LinkedListNode<int> next = current.Next; // Store the next node for iteration
+                current.Next = prev; // Change the link to previous node
+
+                prev = current; // Move the previous node one step forward
+                current = next; // Move the current node one step forward
+            }
+
+            head = prev;
+            Head = prev;
+            return head;
+        }
+
+        public void ReverseRecursive(LinkedListNode<int> head)
+        {
+            if (head == null)
+            {
+                return;
+            }
+
+            if (head.Next == null)
+            {
+                Head = head;
+                return;
+            }
+
+            ReverseRecursive(head.Next);
+
+            head.Next.Next = head;
+            head.Next = null;
+        }
+
         public void DeleteByData(int data)
         {
             if (Head == null)
