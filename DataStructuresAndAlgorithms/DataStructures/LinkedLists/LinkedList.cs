@@ -307,6 +307,35 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             Console.Write("|" + head.Value + "|->");
         }
 
+        public bool Compare(LinkedListNode<int> head1, LinkedListNode<int> head2)
+        {
+            while (head1 != null && head2 != null && head1.Value == head2.Value)
+            {
+                head1 = head1.Next;
+                head2 = head2.Next;
+            }
+
+            return head1 == head2;
+        }
+
+        public bool CompareRecursive(LinkedListNode<int> head1, LinkedListNode<int> head2)
+        {
+            if (head1 == null && head2 == null)
+            {
+                return true;
+            }
+            else if (head1 == null || head2 == null)
+            {
+                return false;
+            }
+            else if (head1.Value != head2.Value)
+            {
+                return false;
+            }
+
+            return CompareRecursive(head1.Next, head2.Next);
+        }
+
         private void AddSortedWithRecursion(LinkedListNode<int> node, int data)
         {
             if (node.Next == null)
