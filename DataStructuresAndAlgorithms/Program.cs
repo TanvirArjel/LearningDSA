@@ -19,10 +19,7 @@ namespace DataStructuresAndAlgorithms
             list.AddToEnd(3);
             list.AddToEnd(4);
 
-            list.Print();
-            Console.WriteLine();
-            list.AddToEndWithRecursion(list.Head, 5);
-            list.Print();
+            list.PrintReverseRecursive(list.Head);
             Console.WriteLine();
             Console.WriteLine("Learning Data Structure And Algorithms");
         }

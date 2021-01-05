@@ -236,6 +236,39 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
         }
 
+        // Tail Recursion
+        public void PrintRecursive(LinkedListNode<int> head)
+        {
+            if (head == null)
+            {
+                return;
+            }
+
+            if (head.Next != null)
+            {
+                Console.Write("|" + head.Value + "|->");
+            }
+            else
+            {
+                Console.Write("|" + head.Value + "|");
+            }
+
+            PrintRecursive(head.Next);
+        }
+
+        // Head Recursion
+        public void PrintReverseRecursive(LinkedListNode<int> head)
+        {
+            if (head == null)
+            {
+                return;
+            }
+
+            PrintReverseRecursive(head.Next);
+
+            Console.Write("|" + head.Value + "|->");
+        }
+
         private void AddSortedWithRecursion(LinkedListNode<int> node, int data)
         {
             if (node.Next == null)
