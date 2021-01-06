@@ -13,15 +13,25 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
+            DataStructures.LinkedLists.LinkedListNode<int> head1 = null;
             LinkedList list = new LinkedList();
-            list.AddToEnd(1);
-            list.AddToEnd(2);
-            list.AddToEnd(3);
-            list.AddToEnd(4);
 
-            list.ReverseIterative(list.Head);
+            head1 = list.AddToEnd(head1, 3);
+            head1 = list.AddToEnd(head1, 3);
+            head1 = list.AddToEnd(head1, 3);
+            head1 = list.AddToEnd(head1, 4);
+            head1 = list.AddToEnd(head1, 5);
+            head1 = list.AddToEnd(head1, 5);
+
+            list.Print(head1);
+
+            DataStructures.LinkedLists.LinkedListNode<int> value = LinkedList.RemoveDuplicatesFromSorted(head1);
+
             Console.WriteLine();
-            list.Print();
+            list.Print(value);
+
+            Console.WriteLine(value);
+            Console.WriteLine();
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 
