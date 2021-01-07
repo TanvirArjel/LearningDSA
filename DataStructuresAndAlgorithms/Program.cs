@@ -13,24 +13,31 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            DataStructures.LinkedLists.LinkedListNode<int> head1 = null;
-            LinkedList list = new LinkedList();
+            SinlgyLinkedList list = new SinlgyLinkedList();
 
-            head1 = list.AddToEnd(head1, 3);
-            head1 = list.AddToEnd(head1, 3);
-            head1 = list.AddToEnd(head1, 3);
-            head1 = list.AddToEnd(head1, 4);
-            head1 = list.AddToEnd(head1, 5);
-            head1 = list.AddToEnd(head1, 5);
+            SinglyLinkedListNode<int> node1 = new SinglyLinkedListNode<int>(3);
+            SinglyLinkedListNode<int> node2 = new SinglyLinkedListNode<int>(4);
+
+            SinglyLinkedListNode<int> head1 = null;
+            head1 = list.AddToEnd(head1, 1);
+            head1 = list.AddToEnd(head1, 2);
+            head1 = list.AddToEnd(head1, node1);
+            head1 = list.AddToEnd(head1, node2);
 
             list.Print(head1);
+            Console.WriteLine();
 
-            DataStructures.LinkedLists.LinkedListNode<int> value = LinkedList.RemoveDuplicatesFromSorted(head1);
+            SinglyLinkedListNode<int> head2 = new SinglyLinkedListNode<int>(1);
+            head2 = list.AddToEnd(head2, node1);
+
+            list.Print(head2);
+            Console.WriteLine();
+
+            SinglyLinkedListNode<int> mergeNode = SinlgyLinkedList.FindMergeNode(head1, head2);
 
             Console.WriteLine();
-            list.Print(value);
+            list.Print(mergeNode);
 
-            Console.WriteLine(value);
             Console.WriteLine();
             Console.WriteLine("Learning Data Structure And Algorithms");
         }

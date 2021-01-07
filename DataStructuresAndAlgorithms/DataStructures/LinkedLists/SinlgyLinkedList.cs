@@ -1,4 +1,4 @@
-﻿// <copyright file="LinkedList.cs" company="TanvirArjel">
+﻿// <copyright file="SinlgyLinkedList.cs" company="TanvirArjel">
 // Copyright (c) TanvirArjel. All rights reserved.
 // </copyright>
 
@@ -6,24 +6,24 @@ using System;
 
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
-    public class LinkedList
+    public class SinlgyLinkedList
     {
-        public LinkedList()
+        public SinlgyLinkedList()
         {
             this.Head = null;
         }
 
-        public LinkedListNode<int> Head { get; set; }
+        public SinglyLinkedListNode<int> Head { get; set; }
 
         public void AddToStart(int data)
         {
             if (Head == null)
             {
-                Head = new LinkedListNode<int>(data);
+                Head = new SinglyLinkedListNode<int>(data);
                 return;
             }
 
-            LinkedListNode<int> newNode = new LinkedListNode<int>(data)
+            SinglyLinkedListNode<int> newNode = new SinglyLinkedListNode<int>(data)
             {
                 Next = Head
             };
@@ -35,23 +35,23 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             if (Head == null)
             {
-                Head = new LinkedListNode<int>(data);
+                Head = new SinglyLinkedListNode<int>(data);
                 return;
             }
 
-            LinkedListNode<int> currentNode = Head;
+            SinglyLinkedListNode<int> currentNode = Head;
 
             while (currentNode.Next != null)
             {
                 currentNode = currentNode.Next;
             }
 
-            currentNode.Next = new LinkedListNode<int>(data);
+            currentNode.Next = new SinglyLinkedListNode<int>(data);
         }
 
-        public LinkedListNode<int> AddToEnd(LinkedListNode<int> head, int data)
+        public SinglyLinkedListNode<int> AddToEnd(SinglyLinkedListNode<int> head, int data)
         {
-            LinkedListNode<int> newNode = new LinkedListNode<int>(data);
+            SinglyLinkedListNode<int> newNode = new SinglyLinkedListNode<int>(data);
 
             if (head == null)
             {
@@ -59,7 +59,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return head;
             }
 
-            LinkedListNode<int> currentNode = head;
+            SinglyLinkedListNode<int> currentNode = head;
 
             while (currentNode.Next != null)
             {
@@ -70,17 +70,36 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
-        public void AddToEndWithRecursion(LinkedListNode<int> head, int data)
+        public SinglyLinkedListNode<int> AddToEnd(SinglyLinkedListNode<int> head, SinglyLinkedListNode<int> newNode)
         {
             if (head == null)
             {
-                Head = new LinkedListNode<int>(data);
+                head = newNode;
+                return head;
+            }
+
+            SinglyLinkedListNode<int> currentNode = head;
+
+            while (currentNode.Next != null)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            currentNode.Next = newNode;
+            return head;
+        }
+
+        public void AddToEndWithRecursion(SinglyLinkedListNode<int> head, int data)
+        {
+            if (head == null)
+            {
+                Head = new SinglyLinkedListNode<int>(data);
                 return;
             }
 
             if (head.Next == null)
             {
-                head.Next = new LinkedListNode<int>(data);
+                head.Next = new SinglyLinkedListNode<int>(data);
             }
             else
             {
@@ -90,7 +109,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
         public void Insert(int data, int position)
         {
-            LinkedListNode<int> newNode = new LinkedListNode<int>(data);
+            SinglyLinkedListNode<int> newNode = new SinglyLinkedListNode<int>(data);
 
             if (position == 1)
             {
@@ -99,7 +118,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return;
             }
 
-            LinkedListNode<int> tempNode = Head;
+            SinglyLinkedListNode<int> tempNode = Head;
             for (int i = 1; i < position - 1; i++)
             {
                 tempNode = tempNode.Next;
@@ -109,7 +128,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             tempNode.Next = newNode;
         }
 
-        public static int FindByIndexBackward(LinkedListNode<int> head, int indexFromTail)
+        public static int FindByIndexBackward(SinglyLinkedListNode<int> head, int indexFromTail)
         {
             if (head == null)
             {
@@ -117,8 +136,8 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
 
             int index = 0;
-            LinkedListNode<int> current = head;
-            LinkedListNode<int> result = head;
+            SinglyLinkedListNode<int> current = head;
+            SinglyLinkedListNode<int> result = head;
 
             while (current != null)
             {
@@ -132,14 +151,14 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return result.Value;
         }
 
-        public LinkedListNode<int> ReverseIterative(LinkedListNode<int> head)
+        public SinglyLinkedListNode<int> ReverseIterative(SinglyLinkedListNode<int> head)
         {
-            LinkedListNode<int> current = head;
-            LinkedListNode<int> prev = null;
+            SinglyLinkedListNode<int> current = head;
+            SinglyLinkedListNode<int> prev = null;
 
             while (current != null)
             {
-                LinkedListNode<int> next = current.Next; // Store the next node for iteration
+                SinglyLinkedListNode<int> next = current.Next; // Store the next node for iteration
                 current.Next = prev; // Change the link to previous node
 
                 prev = current; // Move the previous node one step forward
@@ -151,7 +170,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
-        public void ReverseRecursive(LinkedListNode<int> head)
+        public void ReverseRecursive(SinglyLinkedListNode<int> head)
         {
             if (head == null)
             {
@@ -183,13 +202,13 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return;
             }
 
-            LinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
+            SinglyLinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
 
             while (prevNodeOfNodeToBeDeleted.Next != null)
             {
                 if (prevNodeOfNodeToBeDeleted.Next.Value == data)
                 {
-                    LinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
+                    SinglyLinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
                     prevNodeOfNodeToBeDeleted.Next = tempNode;
                     return;
                 }
@@ -211,7 +230,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return;
             }
 
-            LinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
+            SinglyLinkedListNode<int> prevNodeOfNodeToBeDeleted = Head;
 
             for (int i = 0; i < index - 1; i++)
             {
@@ -224,12 +243,12 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             if (prevNodeOfNodeToBeDeleted.Next != null)
             {
-                LinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
+                SinglyLinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
                 prevNodeOfNodeToBeDeleted.Next = tempNode;
             }
         }
 
-        public LinkedListNode<int> Delete(LinkedListNode<int> head, int position)
+        public SinglyLinkedListNode<int> Delete(SinglyLinkedListNode<int> head, int position)
         {
             if (head == null)
             {
@@ -245,18 +264,18 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
-        public static LinkedListNode<int> RemoveDuplicatesFromSorted(LinkedListNode<int> head)
+        public static SinglyLinkedListNode<int> RemoveDuplicatesFromSorted(SinglyLinkedListNode<int> head)
         {
             if (head == null)
             {
                 return head;
             }
 
-            LinkedListNode<int> current = head;
+            SinglyLinkedListNode<int> current = head;
 
             while (current != null)
             {
-                LinkedListNode<int> next = current.Next;
+                SinglyLinkedListNode<int> next = current.Next;
 
                 while (next != null && current.Value == next.Value)
                 {
@@ -270,9 +289,9 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
-        public LinkedListNode<int> AddSorted(LinkedListNode<int> head, int data)
+        public SinglyLinkedListNode<int> AddSorted(SinglyLinkedListNode<int> head, int data)
         {
-            LinkedListNode<int> newNode = new LinkedListNode<int>(data);
+            SinglyLinkedListNode<int> newNode = new SinglyLinkedListNode<int>(data);
 
             if (head == null)
             {
@@ -289,8 +308,8 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return head;
             }
 
-            LinkedListNode<int> current = head;
-            LinkedListNode<int> prev = null;
+            SinglyLinkedListNode<int> current = head;
+            SinglyLinkedListNode<int> prev = null;
 
             while (current != null && newNode.Value > current.Value)
             {
@@ -307,7 +326,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             if (Head == null)
             {
-                Head = new LinkedListNode<int>(data);
+                Head = new SinglyLinkedListNode<int>(data);
             }
             else if (data < Head.Value)
             {
@@ -319,7 +338,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
         }
 
-        public LinkedListNode<int> MergeSorted(LinkedListNode<int> head1, LinkedListNode<int> head2)
+        public SinglyLinkedListNode<int> MergeSorted(SinglyLinkedListNode<int> head1, SinglyLinkedListNode<int> head2)
         {
             if (head1 == null)
             {
@@ -348,10 +367,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
 
             int i = 1;
-            LinkedListNode<int> currentNode = null;
+            SinglyLinkedListNode<int> currentNode = null;
             while (i <= size)
             {
-                LinkedListNode<int> newNode = new LinkedListNode<int>(i);
+                SinglyLinkedListNode<int> newNode = new SinglyLinkedListNode<int>(i);
                 if (Head == null)
                 {
                     Head = newNode;
@@ -375,7 +394,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             if (Head != null)
             {
-                LinkedListNode<int> currentNode = Head;
+                SinglyLinkedListNode<int> currentNode = Head;
                 while (currentNode != null)
                 {
                     if (currentNode.Next != null)
@@ -396,7 +415,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
         }
 
-        public void Print(LinkedListNode<int> head)
+        public void Print(SinglyLinkedListNode<int> head)
         {
             if (head == null)
             {
@@ -404,7 +423,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return;
             }
 
-            LinkedListNode<int> currentNode = head;
+            SinglyLinkedListNode<int> currentNode = head;
             while (currentNode != null)
             {
                 if (currentNode.Next != null)
@@ -421,7 +440,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         }
 
         // Tail Recursion
-        public void PrintRecursive(LinkedListNode<int> head)
+        public void PrintRecursive(SinglyLinkedListNode<int> head)
         {
             if (head == null)
             {
@@ -441,7 +460,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         }
 
         // Head Recursion
-        public void PrintReverseRecursive(LinkedListNode<int> head)
+        public void PrintReverseRecursive(SinglyLinkedListNode<int> head)
         {
             if (head == null)
             {
@@ -453,7 +472,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             Console.Write("|" + head.Value + "|->");
         }
 
-        public bool Compare(LinkedListNode<int> head1, LinkedListNode<int> head2)
+        public bool Compare(SinglyLinkedListNode<int> head1, SinglyLinkedListNode<int> head2)
         {
             while (head1 != null && head2 != null && head1.Value == head2.Value)
             {
@@ -464,7 +483,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head1 == head2;
         }
 
-        public bool CompareRecursive(LinkedListNode<int> head1, LinkedListNode<int> head2)
+        public bool CompareRecursive(SinglyLinkedListNode<int> head1, SinglyLinkedListNode<int> head2)
         {
             if (head1 == null && head2 == null)
             {
@@ -482,15 +501,49 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return CompareRecursive(head1.Next, head2.Next);
         }
 
-        private void AddSortedWithRecursion(LinkedListNode<int> node, int data)
+        public static SinglyLinkedListNode<int> FindMergeNode(SinglyLinkedListNode<int> head1, SinglyLinkedListNode<int> head2)
+        {
+            if (head1 == null || head2 == null)
+            {
+                return null;
+            }
+
+            SinglyLinkedListNode<int> currentHead1 = head1;
+            SinglyLinkedListNode<int> currentHead2 = head2;
+
+            while (currentHead1 != currentHead2)
+            {
+                if (currentHead1 != null)
+                {
+                    currentHead1 = currentHead1.Next;
+                }
+                else
+                {
+                    currentHead1 = head2;
+                }
+
+                if (currentHead2 != null)
+                {
+                    currentHead2 = currentHead2.Next;
+                }
+                else
+                {
+                    currentHead2 = head1;
+                }
+            }
+
+            return currentHead1;
+        }
+
+        private void AddSortedWithRecursion(SinglyLinkedListNode<int> node, int data)
         {
             if (node.Next == null)
             {
-                node.Next = new LinkedListNode<int>(data);
+                node.Next = new SinglyLinkedListNode<int>(data);
             }
             else if (data < node.Next.Value)
             {
-                LinkedListNode<int> tempNode = new LinkedListNode<int>(data)
+                SinglyLinkedListNode<int> tempNode = new SinglyLinkedListNode<int>(data)
                 {
                     Next = node.Next
                 };
