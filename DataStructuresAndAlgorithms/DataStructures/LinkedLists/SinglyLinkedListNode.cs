@@ -6,9 +6,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
     public class SinglyLinkedListNode<T> : Node<T>
     {
-        private SinglyLinkedListNode<T> _next;
-
-        public SinglyLinkedListNode(T data) : base(data)
+        public SinglyLinkedListNode(T data) : base(data, new NodeList<T>(1))
         {
             this.Next = null;
         }
@@ -17,21 +15,12 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
         {
             get
             {
-                return _next;
+                return (SinglyLinkedListNode<T>)Neighbours[0];
             }
 
             set
             {
-                if (value != null)
-                {
-                    if (Neighbours == null)
-                    {
-                        Neighbours = new NodeList<T>();
-                    }
-
-                    Neighbours.Add(value);
-                    _next = value;
-                }
+                Neighbours[0] = value;
             }
         }
     }

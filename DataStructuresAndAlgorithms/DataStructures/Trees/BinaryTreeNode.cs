@@ -6,40 +6,25 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
 {
     public class BinaryTreeNode<T> : Node<T>
     {
-        public BinaryTreeNode(T data) : base(data, null)
+        public BinaryTreeNode(T data) : base(data, new NodeList<T>(2))
         {
         }
 
-        public BinaryTreeNode(T data, BinaryTreeNode<T> leftNode, BinaryTreeNode<T> rightNode) : base(data)
+        public BinaryTreeNode(T data, BinaryTreeNode<T> leftNode, BinaryTreeNode<T> rightNode) : base(data, new NodeList<T>(2))
         {
-            NodeList<T> children = new NodeList<T>(2);
-            children[0] = leftNode;
-            children[1] = rightNode;
-
-            Neighbours = children;
+            Neighbours[0] = leftNode;
+            Neighbours[1] = rightNode;
         }
 
         public BinaryTreeNode<T> LeftNode
         {
             get
             {
-                if (Neighbours == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return (BinaryTreeNode<T>)Neighbours[0];
-                }
+                return (BinaryTreeNode<T>)Neighbours[0];
             }
 
             set
             {
-                if (Neighbours == null)
-                {
-                    Neighbours = new NodeList<T>(2);
-                }
-
                 Neighbours[0] = value;
             }
         }
@@ -48,23 +33,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
         {
             get
             {
-                if (Neighbours == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return (BinaryTreeNode<T>)Neighbours[1];
-                }
+                return (BinaryTreeNode<T>)Neighbours[1];
             }
 
             set
             {
-                if (Neighbours == null)
-                {
-                    Neighbours = new NodeList<T>(2);
-                }
-
                 Neighbours[1] = value;
             }
         }

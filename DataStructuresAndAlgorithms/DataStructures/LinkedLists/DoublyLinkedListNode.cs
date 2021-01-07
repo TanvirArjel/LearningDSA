@@ -2,10 +2,7 @@
 {
     public class DoublyLinkedListNode<T> : Node<T>
     {
-        private DoublyLinkedListNode<T> prev;
-        private DoublyLinkedListNode<T> _next;
-
-        public DoublyLinkedListNode(T data) : base(data)
+        public DoublyLinkedListNode(T data) : base(data, new NodeList<T>(2))
         {
             this.Prev = null;
             this.Next = null;
@@ -15,21 +12,12 @@
         {
             get
             {
-                return prev;
+                return (DoublyLinkedListNode<T>)Neighbours[0];
             }
 
             set
             {
-                if (value != null)
-                {
-                    if (Neighbours == null)
-                    {
-                        Neighbours = new NodeList<T>();
-                    }
-
-                    Neighbours.Add(value);
-                    prev = value;
-                }
+                Neighbours[0] = value;
             }
         }
 
@@ -37,21 +25,12 @@
         {
             get
             {
-                return _next;
+                return (DoublyLinkedListNode<T>)Neighbours[1];
             }
 
             set
             {
-                if (value != null)
-                {
-                    if (Neighbours == null)
-                    {
-                        Neighbours = new NodeList<T>();
-                    }
-
-                    Neighbours.Add(value);
-                    _next = value;
-                }
+                Neighbours[1] = value;
             }
         }
     }

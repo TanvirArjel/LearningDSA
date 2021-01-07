@@ -13,32 +13,18 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            SinlgyLinkedList list = new SinlgyLinkedList();
+            DoublyLinkedListNode<int> head = null;
+            head = DoublyLinkedList.InsertAtHead(head, 1);
+            head = DoublyLinkedList.InsertAtHead(head, 2);
+            head = DoublyLinkedList.InsertAtHead(head, 3);
 
-            SinglyLinkedListNode<int> node1 = new SinglyLinkedListNode<int>(3);
-            SinglyLinkedListNode<int> node2 = new SinglyLinkedListNode<int>(4);
-
-            SinglyLinkedListNode<int> head1 = null;
-            head1 = list.AddToEnd(head1, 1);
-            head1 = list.AddToEnd(head1, 2);
-            head1 = list.AddToEnd(head1, node1);
-            head1 = list.AddToEnd(head1, node2);
-
-            list.Print(head1);
+            DoublyLinkedList.Print(head);
+            head = DoublyLinkedList.InsertAtTail(head, 0);
             Console.WriteLine();
-
-            SinglyLinkedListNode<int> head2 = new SinglyLinkedListNode<int>(1);
-            head2 = list.AddToEnd(head2, node1);
-
-            list.Print(head2);
+            DoublyLinkedList.Print(head);
+            head = DoublyLinkedList.Reverse(head);
             Console.WriteLine();
-
-            SinglyLinkedListNode<int> mergeNode = SinlgyLinkedList.FindMergeNode(head1, head2);
-
-            Console.WriteLine();
-            list.Print(mergeNode);
-
-            Console.WriteLine();
+            DoublyLinkedList.Print(head);
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 
