@@ -13,18 +13,31 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            DoublyLinkedListNode<int> head = null;
-            head = DoublyLinkedList.InsertAtHead(head, 1);
-            head = DoublyLinkedList.InsertAtHead(head, 2);
-            head = DoublyLinkedList.InsertAtHead(head, 3);
+            ////DoublyLinkedListNode<int> head = null;
+            ////head = DoublyLinkedList.InsertAtHead(head, 4);
+            ////head = DoublyLinkedList.InsertAtHead(head, 2);
+            ////head = DoublyLinkedList.InsertAtHead(head, 1);
 
-            DoublyLinkedList.Print(head);
-            head = DoublyLinkedList.InsertAtTail(head, 0);
+            ////DoublyLinkedList.Print(head);
+            ////head = DoublyLinkedList.InsertSorted(head, 0);
+            ////head = DoublyLinkedList.InsertSorted(head, 5);
+            ////Console.WriteLine();
+            ////DoublyLinkedList.Print(head);
+
+            SinglyLinkedListNode<int> head2 = null;
+            SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+            singlyLinkedList.AddToEnd(1);
+            singlyLinkedList.AddToEnd(2);
+            singlyLinkedList.AddToEnd(4);
+
+            singlyLinkedList.Print(singlyLinkedList.Head);
             Console.WriteLine();
-            DoublyLinkedList.Print(head);
-            head = DoublyLinkedList.Reverse(head);
+
+            SinglyLinkedListNode<int> singlyLinkedListNode = singlyLinkedList.AddSorted(singlyLinkedList.Head, 3);
+
+            singlyLinkedList.Print(singlyLinkedListNode);
             Console.WriteLine();
-            DoublyLinkedList.Print(head);
+
             Console.WriteLine("Learning Data Structure And Algorithms");
         }
 

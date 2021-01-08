@@ -1,4 +1,4 @@
-﻿// <copyright file="SinlgyLinkedList.cs" company="TanvirArjel">
+﻿// <copyright file="SinglyLinkedList.cs" company="TanvirArjel">
 // Copyright (c) TanvirArjel. All rights reserved.
 // </copyright>
 
@@ -6,9 +6,9 @@ using System;
 
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
-    public class SinlgyLinkedList
+    public class SinglyLinkedList
     {
-        public SinlgyLinkedList()
+        public SinglyLinkedList()
         {
             this.Head = null;
         }

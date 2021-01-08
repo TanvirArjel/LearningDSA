@@ -47,6 +47,43 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
+        public static DoublyLinkedListNode<int> InsertSorted(DoublyLinkedListNode<int> head, int data)
+        {
+            DoublyLinkedListNode<int> newNode = new DoublyLinkedListNode<int>(data);
+
+            if (head == null)
+            {
+                return newNode;
+            }
+
+            if (data <= head.Value)
+            {
+                newNode.Next = head;
+                head.Prev = newNode;
+                return newNode;
+            }
+
+            DoublyLinkedListNode<int> currentNode = head;
+
+            while (currentNode.Next != null && data > currentNode.Next.Value)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            DoublyLinkedListNode<int> nextOfCurrent = currentNode.Next;
+            newNode.Next = nextOfCurrent;
+
+            if (nextOfCurrent != null)
+            {
+                nextOfCurrent.Prev = newNode;
+            }
+
+            newNode.Prev = currentNode;
+            currentNode.Next = newNode;
+
+            return head;
+        }
+
         public static DoublyLinkedListNode<int> Reverse(DoublyLinkedListNode<int> head)
         {
             if (head == null)
