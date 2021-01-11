@@ -56,7 +56,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return newNode;
             }
 
-            if (data <= head.Value)
+            if (data <= head.Data)
             {
                 newNode.Next = head;
                 head.Prev = newNode;
@@ -65,7 +65,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             DoublyLinkedListNode<int> currentNode = head;
 
-            while (currentNode.Next != null && data > currentNode.Next.Value)
+            while (currentNode.Next != null && data > currentNode.Next.Data)
             {
                 currentNode = currentNode.Next;
             }
@@ -119,7 +119,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             DoublyLinkedListNode<int> currentNode = head;
             while (currentNode != null)
             {
-                Console.Write(currentNode.Value + "->");
+                Console.Write(currentNode.Data + "->");
                 currentNode = currentNode.Next;
             }
         }

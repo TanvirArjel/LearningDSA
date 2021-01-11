@@ -47,7 +47,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
                 return;
             }
 
-            Console.Write(node.Value + " ");
+            Console.Write(node.Data + " ");
             PrintPreOrder(node.LeftNode);
             PrintPreOrder(node.RightNode);
         }

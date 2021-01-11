@@ -15,11 +15,11 @@ namespace DataStructuresAndAlgorithms.DataStructures
 
         public Node(T data, NodeList<T> neighbors)
         {
-            this.Value = data;
+            this.Data = data;
             this.Neighbours = neighbors;
         }
 
-        public T Value { get; set; }
+        public T Data { get; set; }
 
         protected NodeList<T> Neighbours { get; set; }
     }
@@ -44,7 +44,7 @@ namespace DataStructuresAndAlgorithms.DataStructures
             // search the list for the value
             foreach (Node<T> node in Items)
             {
-                if (node.Value.Equals(value))
+                if (node.Data.Equals(value))
                 {
                     return node;
                 }

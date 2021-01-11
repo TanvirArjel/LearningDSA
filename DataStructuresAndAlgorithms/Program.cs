@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.LinkedLists;
+using DataStructuresAndAlgorithms.DataStructures.Trees;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,32 +13,14 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            ////DoublyLinkedListNode<int> head = null;
-            ////head = DoublyLinkedList.InsertAtHead(head, 4);
-            ////head = DoublyLinkedList.InsertAtHead(head, 2);
-            ////head = DoublyLinkedList.InsertAtHead(head, 1);
+            BinaryTreeNode<int> root = new BinaryTreeNode<int>(
+                1,
+                new BinaryTreeNode<int>(2, new BinaryTreeNode<int>(4), new BinaryTreeNode<int>(5)),
+                new BinaryTreeNode<int>(3, new BinaryTreeNode<int>(6), new BinaryTreeNode<int>(7)));
 
-            ////DoublyLinkedList.Print(head);
-            ////head = DoublyLinkedList.InsertSorted(head, 0);
-            ////head = DoublyLinkedList.InsertSorted(head, 5);
-            ////Console.WriteLine();
-            ////DoublyLinkedList.Print(head);
-
-            SinglyLinkedListNode<int> head2 = null;
-            SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-            singlyLinkedList.AddToEnd(1);
-            singlyLinkedList.AddToEnd(2);
-            singlyLinkedList.AddToEnd(4);
-
-            singlyLinkedList.Print(singlyLinkedList.Head);
-            Console.WriteLine();
-
-            SinglyLinkedListNode<int> singlyLinkedListNode = singlyLinkedList.AddSorted(singlyLinkedList.Head, 3);
-
-            singlyLinkedList.Print(singlyLinkedListNode);
-            Console.WriteLine();
-
-            Console.WriteLine("Learning Data Structure And Algorithms");
+            BinaryTree<int> binaryTree = new BinaryTree<int>();
+            binaryTree.PrintTopView(root);
+            ////Console.WriteLine(height);
         }
 
         private static int Method2()

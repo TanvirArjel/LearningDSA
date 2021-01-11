@@ -27,19 +27,19 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
             BinaryTreeNode<int> current = Root, parent = null;
             while (current != null)
             {
-                if (data == current.Value)
+                if (data == current.Data)
                 {
                     // For attempting duplicate insertion you can raise exception or just ignore.
                     //// throw new ArgumentException("The data you are trying to add is already exists.");
                     return;
                 }
-                else if (data > current.Value)
+                else if (data > current.Data)
                 {
                     // data > current.Value, must add new Node to current's right subtree
                     parent = current;
                     current = current.RightNode;
                 }
-                else if (data < current.Value)
+                else if (data < current.Data)
                 {
                     // data < current.Value, must add new Node to current's left subtree
                     parent = current;
@@ -54,7 +54,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
             else
             {
                 // data >  parent.Value, therefore the new Node must be added to the right subtree
-                if (data > parent.Value)
+                if (data > parent.Data)
                 {
                     parent.RightNode = nodeToBeAdded;
                 }

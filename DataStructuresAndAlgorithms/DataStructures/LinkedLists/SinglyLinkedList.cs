@@ -148,7 +148,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 }
             }
 
-            return result.Value;
+            return result.Data;
         }
 
         public SinglyLinkedListNode<int> ReverseIterative(SinglyLinkedListNode<int> head)
@@ -196,7 +196,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return;
             }
 
-            if (Head.Value == data)
+            if (Head.Data == data)
             {
                 Head = null;
                 return;
@@ -206,7 +206,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             while (prevNodeOfNodeToBeDeleted.Next != null)
             {
-                if (prevNodeOfNodeToBeDeleted.Next.Value == data)
+                if (prevNodeOfNodeToBeDeleted.Next.Data == data)
                 {
                     SinglyLinkedListNode<int> tempNode = prevNodeOfNodeToBeDeleted.Next.Next;
                     prevNodeOfNodeToBeDeleted.Next = tempNode;
@@ -277,7 +277,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             {
                 SinglyLinkedListNode<int> next = current.Next;
 
-                while (next != null && current.Value == next.Value)
+                while (next != null && current.Data == next.Data)
                 {
                     next = next.Next;
                 }
@@ -300,7 +300,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 return head;
             }
 
-            if (data <= head.Value)
+            if (data <= head.Data)
             {
                 newNode.Next = head;
                 head = newNode;
@@ -311,7 +311,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             SinglyLinkedListNode<int> current = head;
             SinglyLinkedListNode<int> prev = null;
 
-            while (current != null && newNode.Value > current.Value)
+            while (current != null && newNode.Data > current.Data)
             {
                 prev = current;
                 current = current.Next;
@@ -328,7 +328,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             {
                 Head = new SinglyLinkedListNode<int>(data);
             }
-            else if (data < Head.Value)
+            else if (data < Head.Data)
             {
                 AddToStart(data);
             }
@@ -352,7 +352,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             while (head2 != null)
             {
-                head1 = AddSorted(head1, head2.Value);
+                head1 = AddSorted(head1, head2.Data);
                 head2 = head2.Next;
             }
 
@@ -399,11 +399,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
                 {
                     if (currentNode.Next != null)
                     {
-                        Console.Write("|" + currentNode.Value + "|->");
+                        Console.Write("|" + currentNode.Data + "|->");
                     }
                     else
                     {
-                        Console.Write("|" + currentNode.Value + "|");
+                        Console.Write("|" + currentNode.Data + "|");
                     }
 
                     currentNode = currentNode.Next;
@@ -428,11 +428,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             {
                 if (currentNode.Next != null)
                 {
-                    Console.Write("|" + currentNode.Value + "|->");
+                    Console.Write("|" + currentNode.Data + "|->");
                 }
                 else
                 {
-                    Console.Write("|" + currentNode.Value + "|");
+                    Console.Write("|" + currentNode.Data + "|");
                 }
 
                 currentNode = currentNode.Next;
@@ -449,11 +449,11 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             if (head.Next != null)
             {
-                Console.Write("|" + head.Value + "|->");
+                Console.Write("|" + head.Data + "|->");
             }
             else
             {
-                Console.Write("|" + head.Value + "|");
+                Console.Write("|" + head.Data + "|");
             }
 
             PrintRecursive(head.Next);
@@ -469,12 +469,12 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 
             PrintReverseRecursive(head.Next);
 
-            Console.Write("|" + head.Value + "|->");
+            Console.Write("|" + head.Data + "|->");
         }
 
         public bool Compare(SinglyLinkedListNode<int> head1, SinglyLinkedListNode<int> head2)
         {
-            while (head1 != null && head2 != null && head1.Value == head2.Value)
+            while (head1 != null && head2 != null && head1.Data == head2.Data)
             {
                 head1 = head1.Next;
                 head2 = head2.Next;
@@ -493,7 +493,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             {
                 return false;
             }
-            else if (head1.Value != head2.Value)
+            else if (head1.Data != head2.Data)
             {
                 return false;
             }
@@ -541,7 +541,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             {
                 node.Next = new SinglyLinkedListNode<int>(data);
             }
-            else if (data < node.Next.Value)
+            else if (data < node.Next.Data)
             {
                 SinglyLinkedListNode<int> tempNode = new SinglyLinkedListNode<int>(data)
                 {

@@ -24,7 +24,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
             while (nodesToBeExplored.Any())
             {
                 BinaryTreeNode<int> currentNode = nodesToBeExplored.Dequeue();
-                Console.Write(currentNode.Value.ToString(CultureInfo.InvariantCulture) + " ");
+                Console.Write(currentNode.Data.ToString(CultureInfo.InvariantCulture) + " ");
 
                 if (currentNode.LeftNode != null)
                 {
