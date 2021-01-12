@@ -13,56 +13,78 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
 
         public BinaryTreeNode<int> Root { get; set; }
 
-        public virtual void Clear()
-        {
-            Root = null;
-        }
-
-        public void Add(int data)
+        public BinaryTreeNode<int> Insert(BinaryTreeNode<int> root, int data)
         {
             // create a new Node instance
-            BinaryTreeNode<int> nodeToBeAdded = new BinaryTreeNode<int>(data);
+            BinaryTreeNode<int> nodeToBeInserted = new BinaryTreeNode<int>(data);
+
+            if (root == null)
+            {
+                Root = nodeToBeInserted;
+                return nodeToBeInserted;
+            }
 
             // now, insert n into the treetrace down the tree until we hit a NULL
-            BinaryTreeNode<int> current = Root, parent = null;
+            BinaryTreeNode<int> current = root;
             while (current != null)
             {
                 if (data == current.Data)
                 {
                     // For attempting duplicate insertion you can raise exception or just ignore.
                     //// throw new ArgumentException("The data you are trying to add is already exists.");
-                    return;
+                    break;
                 }
                 else if (data > current.Data)
                 {
-                    // data > current.Value, must add new Node to current's right subtree
-                    parent = current;
+                    if (current.RightNode == null)
+                    {
+                        current.RightNode = nodeToBeInserted;
+                        break;
+                    }
+
                     current = current.RightNode;
                 }
                 else if (data < current.Data)
                 {
-                    // data < current.Value, must add new Node to current's left subtree
-                    parent = current;
+                    if (current.LeftNode == null)
+                    {
+                        current.LeftNode = nodeToBeInserted;
+                        break;
+                    }
+
                     current = current.LeftNode;
                 }
             }
 
-            if (parent == null)
+            Root = root;
+            return root;
+        }
+
+        public BinaryTreeNode<int> InsertRecursive(BinaryTreeNode<int> root, int data)
+        {
+            // create a new Node instance
+            BinaryTreeNode<int> nodeToBeInserted = new BinaryTreeNode<int>(data);
+
+            if (root == null)
             {
-                Root = nodeToBeAdded;
+                root = nodeToBeInserted;
+            }
+            else if (data <= root.Data)
+            {
+                root.LeftNode = InsertRecursive(root.LeftNode, data);
             }
             else
             {
-                // data >  parent.Value, therefore the new Node must be added to the right subtree
-                if (data > parent.Data)
-                {
-                    parent.RightNode = nodeToBeAdded;
-                }
-                else
-                {
-                    parent.LeftNode = nodeToBeAdded;
-                }
+                root.RightNode = InsertRecursive(root.RightNode, data);
             }
+
+            Root = root;
+            return root;
+        }
+
+        public virtual void Clear()
+        {
+            Root = null;
         }
     }
 }

@@ -13,14 +13,18 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            BinaryTreeNode<int> root = new BinaryTreeNode<int>(
-                1,
-                new BinaryTreeNode<int>(2, new BinaryTreeNode<int>(4), new BinaryTreeNode<int>(5)),
-                new BinaryTreeNode<int>(3, new BinaryTreeNode<int>(6), new BinaryTreeNode<int>(7)));
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
 
-            BinaryTree<int> binaryTree = new BinaryTree<int>();
-            binaryTree.PrintTopView(root);
-            ////Console.WriteLine(height);
+            BinaryTreeNode<int> root = null;
+            root = binarySearchTree.InsertRecursive(root, 1);
+            root = binarySearchTree.InsertRecursive(root, 2);
+            root = binarySearchTree.InsertRecursive(root, 3);
+            root = binarySearchTree.InsertRecursive(root, 4);
+            root = binarySearchTree.InsertRecursive(root, 5);
+            root = binarySearchTree.InsertRecursive(root, 6);
+            root = binarySearchTree.InsertRecursive(root, 7);
+
+            Console.WriteLine("");
         }
 
         private static int Method2()
