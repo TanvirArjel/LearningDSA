@@ -56,9 +56,9 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                 int mid = (start + end) / 2;
 
                 // check if mid+1 is pivot
-                if (array[mid] < array[mid - 1])
+                if (mid < array.Length - 1 && array[mid] > array[mid + 1])
                 {
-                    return mid;
+                    return mid + 1;
                 }
 
                 // If array[start] <= array[mid],it means from start to mid, all elements are in sorted order,

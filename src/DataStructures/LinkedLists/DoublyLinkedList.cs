@@ -106,7 +106,6 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             }
 
             return newHead;
-
         }
 
         public static void Print(DoublyLinkedListNode<int> head)

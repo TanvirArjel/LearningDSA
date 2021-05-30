@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Trees;
+using DataStructuresAndAlgorithms.DataStructures.Arrays;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,18 +13,8 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
-
-            BinaryTreeNode<int> root = null;
-            root = binarySearchTree.InsertRecursive(root, 1);
-            root = binarySearchTree.InsertRecursive(root, 2);
-            root = binarySearchTree.InsertRecursive(root, 3);
-            root = binarySearchTree.InsertRecursive(root, 4);
-            root = binarySearchTree.InsertRecursive(root, 5);
-            root = binarySearchTree.InsertRecursive(root, 6);
-            root = binarySearchTree.InsertRecursive(root, 7);
-
-            Console.WriteLine("");
+            int[] array = { 3, 4, 5, 6, 1, 2 };
+            int v = FindInSortedRotatedArray.Find(array, 4);
         }
 
         private static int Method2()
