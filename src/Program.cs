@@ -5,7 +5,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Arrays;
+using DataStructuresAndAlgorithms.DataStructures.Trees;
+using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals.DepthFirstTraversals;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,8 +14,21 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] array = { 3, 4, 5, 6, 1, 2 };
-            int v = FindInSortedRotatedArray.Find(array, 4);
+            BinaryTreeNode<int> root = new BinaryTreeNode<int>(6)
+            {
+                LeftNode = new BinaryTreeNode<int>(3)
+                {
+                    LeftNode = new BinaryTreeNode<int>(2),
+                    RightNode = new BinaryTreeNode<int>(5)
+                },
+                RightNode = new BinaryTreeNode<int>(11)
+                {
+                    LeftNode = new BinaryTreeNode<int>(9),
+                    RightNode = new BinaryTreeNode<int>(12)
+                }
+            };
+
+            StackDepthFirstTraversal.Print(root);
         }
 
         private static int Method2()

@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Arrays
+﻿// <copyright file="FindInSortedRotatedArray.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Arrays
 {
     public static class FindInSortedRotatedArray
     {

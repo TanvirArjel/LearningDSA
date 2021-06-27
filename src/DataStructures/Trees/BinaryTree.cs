@@ -85,6 +85,33 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees
             }
         }
 
+        public bool IsBinarySearchTree(BinaryTreeNode<int> root)
+        {
+            if (root == null)
+            {
+                return true;
+            }
+
+            return IsBinarySearchTree(root, int.MinValue, int.MaxValue);
+        }
+
+        private bool IsBinarySearchTree(BinaryTreeNode<int> root, int minValue, int maxValue)
+        {
+            if (root == null)
+            {
+                return true;
+            }
+
+            if (root.Data > minValue && root.Data < maxValue
+                && IsBinarySearchTree(root.LeftNode, minValue, root.Data)
+                && IsBinarySearchTree(root.RightNode, root.Data, maxValue))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public int FindHeight(BinaryTreeNode<int> root)
         {
             if (root == null)

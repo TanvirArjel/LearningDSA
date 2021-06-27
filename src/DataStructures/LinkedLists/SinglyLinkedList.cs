@@ -70,7 +70,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
             return head;
         }
 
-        public SinglyLinkedListNode<int> AddToEnd(SinglyLinkedListNode<int> head, SinglyLinkedListNode<int> newNode)
+        public static SinglyLinkedListNode<int> AddToEnd(SinglyLinkedListNode<int> head, SinglyLinkedListNode<int> newNode)
         {
             if (head == null)
             {

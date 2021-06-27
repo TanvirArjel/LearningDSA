@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
+﻿// <copyright file="DoublyLinkedListNode.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.LinkedLists
 {
     public class DoublyLinkedListNode<T> : Node<T>
     {
