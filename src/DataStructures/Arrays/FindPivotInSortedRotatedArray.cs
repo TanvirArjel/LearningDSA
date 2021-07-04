@@ -44,37 +44,44 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                 return -1;
             }
 
-            // If array contains one element or array is not rotated, then first index is the pivot.
-            if (array.Length == 1 || array[0] < array[array.Length - 1])
+            // If the array contains only one element then this element is pivot.
+            if (array.Length == 1)
             {
                 return 0;
             }
 
-            int start = 0, end = array.Length - 1;
+            int start = 0;
+            int end = array.Length - 1;
+
+            // If the array is not sorted then the fist element is the pivot.
+            if (array[start] < array[end])
+            {
+                return 0;
+            }
+
             while (start <= end)
             {
                 int mid = (start + end) / 2;
 
-                // check if mid+1 is pivot
-                if (mid < array.Length - 1 && array[mid] > array[mid + 1])
+                // If the mid element is smaller than it's previous element then mid element is pivot;
+                if (mid > 0 && array[mid] < array[mid - 1])
                 {
-                    return mid + 1;
+                    return mid;
                 }
 
-                // If array[start] <= array[mid],it means from start to mid, all elements are in sorted order,
-                // so pivot will be in second half
-                if (array[start] <= array[mid])
+                // If right part is sorted then pivot is in the left part.
+                if (array[mid] <= array[end])
                 {
-                    start = mid + 1;
+                    end = mid - 1;
                 }
                 else
                 {
-                    // else pivot lies in first half, so we find the pivot in first half
-                    end = mid - 1;
+                    // If left part is sorted then pivot is in the right part.
+                    start = mid + 1;
                 }
             }
 
-            return 0;
+            return -1;
         }
     }
 }
