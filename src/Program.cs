@@ -5,8 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Trees;
-using DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals.DepthFirstTraversals;
+using DataStructuresAndAlgorithms.DataStructures.LinkedLists;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -14,21 +13,12 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            BinaryTreeNode<int> root = new BinaryTreeNode<int>(6)
-            {
-                LeftNode = new BinaryTreeNode<int>(3)
-                {
-                    LeftNode = new BinaryTreeNode<int>(2),
-                    RightNode = new BinaryTreeNode<int>(5)
-                },
-                RightNode = new BinaryTreeNode<int>(11)
-                {
-                    LeftNode = new BinaryTreeNode<int>(9),
-                    RightNode = new BinaryTreeNode<int>(12)
-                }
-            };
-
-            StackDepthFirstTraversal.Print(root);
+            SinglyLinkedListNode<int> linkedList = SinglyLinkedList.Create(7);
+            SinglyLinkedListNode<int> updatedListList = SinglyLinkedList.AddSorted(linkedList, 8);
+            SinglyLinkedList.Print(linkedList);
+            Console.WriteLine();
+            SinglyLinkedList.Print(updatedListList);
+            Console.ReadLine();
         }
 
         private static int Method2()

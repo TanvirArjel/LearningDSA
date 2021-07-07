@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals.DepthFirstTraversals
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Traversals.DepthFirstTraversals
 {
     public static class StackDepthFirstTraversal
     {

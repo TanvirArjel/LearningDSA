@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Traversals.DepthFirstTraversals
 {
     // Problem: Given a Binary Tree, print the nodes of a binary tree in a pre-order fashion.
     // Input: Sample tree
@@ -24,12 +24,12 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
     // Space Complexity is : O(1)
     public class PreOrderTraversal
     {
-        private readonly BinaryTree<int> _binaryTree = new BinaryTree<int>();
+        private readonly BinaryTreeNode<int> _binaryTree;
 
         public PreOrderTraversal()
         {
             // Initializing or Creating the Sample Binray Tree here
-            _binaryTree.Root = new BinaryTreeNode<int>(
+            _binaryTree = new BinaryTreeNode<int>(
                 1,
                 new BinaryTreeNode<int>(2, new BinaryTreeNode<int>(4), new BinaryTreeNode<int>(5)),
                 new BinaryTreeNode<int>(3, new BinaryTreeNode<int>(6), new BinaryTreeNode<int>(7)));
@@ -37,7 +37,7 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTreeTraversals
 
         public void PrintPreOrder()
         {
-            PrintPreOrder(_binaryTree.Root);
+            PrintPreOrder(_binaryTree);
         }
 
         public void PrintPreOrder<T>(BinaryTreeNode<T> node)
