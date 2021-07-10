@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace DataStructuresAndAlgorithms.DynamicProgramming
 {
     /// <summary>
-    /// Proper divisors are the factors or divisor which are strictly less than the number itself.
+    /// Proper divisors are the factors or divisors which are strictly less than the number itself.
     /// </summary>
     public static class FindAllTheProperDivisors
     {

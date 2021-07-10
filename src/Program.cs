@@ -13,8 +13,13 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int sum = SumOfProperDivisors.FindSum(284);
-            Console.WriteLine(sum);
+            List<int> numbers = FindAmicalbleNumbers.Find(6000);
+            Console.WriteLine("............");
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+
             Console.ReadLine();
         }
 
