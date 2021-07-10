@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.LinkedLists;
+using DataStructuresAndAlgorithms.DynamicProgramming;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,11 +13,8 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            SinglyLinkedListNode<int> linkedList = SinglyLinkedList.Create(7);
-            SinglyLinkedListNode<int> updatedListList = SinglyLinkedList.AddSorted(linkedList, 8);
-            SinglyLinkedList.Print(linkedList);
-            Console.WriteLine();
-            SinglyLinkedList.Print(updatedListList);
+            int sum = SumOfProperDivisors.FindSum(284);
+            Console.WriteLine(sum);
             Console.ReadLine();
         }
 

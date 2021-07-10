@@ -1,12 +1,16 @@
-﻿using System;
+﻿// <copyright file="PrintTopView.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
 {
-    public class PrintTopView
+    public static class PrintTopView
     {
-        public void Print(BinaryTreeNode<int> root)
+        public static void Print(BinaryTreeNode<int> root)
         {
             if (root == null)
             {

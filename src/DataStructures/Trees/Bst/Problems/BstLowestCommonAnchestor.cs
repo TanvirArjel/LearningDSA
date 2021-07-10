@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems
+﻿// <copyright file="BstLowestCommonAnchestor.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems
 {
     public static class BstLowestCommonAnchestor
     {

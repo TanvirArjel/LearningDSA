@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
+﻿// <copyright file="IsBinarySearchTree.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
 {
     public class IsBinarySearchTree
     {

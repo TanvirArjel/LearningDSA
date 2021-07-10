@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="FindTheHeightOfBinaryTree.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
 {
