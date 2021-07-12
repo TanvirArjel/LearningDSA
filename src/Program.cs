@@ -13,13 +13,9 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            List<int> numbers = FindAmicalbleNumbers.Find(6000);
-            Console.WriteLine("............");
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                Console.WriteLine(numbers[i]);
-            }
-
+            string input = "forgeeksskeegfor";
+            string outPut = FindLongestPalindromicSubstring.FindLPS2(input);
+            Console.WriteLine(outPut);
             Console.ReadLine();
         }
 

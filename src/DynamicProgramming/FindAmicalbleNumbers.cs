@@ -55,7 +55,7 @@ namespace DataStructuresAndAlgorithms.DynamicProgramming
                 throw new ArgumentOutOfRangeException("number");
             }
 
-            int sum = 1;
+            int sum = 1; // One is the common divisor of all natural number.
             int sqrtOfN = (int)Math.Round(Math.Sqrt(number));
             for (int i = 2; i < sqrtOfN; i++)
             {
