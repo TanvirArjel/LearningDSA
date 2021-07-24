@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DynamicProgramming;
+using DataStructuresAndAlgorithms.DataStructures.Arrays;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,8 +13,9 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            string input = "forgeeksskeegfor";
-            string outPut = FindLongestPalindromicSubstring.FindLPS2(input);
+            int[] arr1 = { 1, 3 };
+            int[] arr2 = { 2 };
+            double outPut = MedianOfTwoSortedArrays.Find(arr1, arr2);
             Console.WriteLine(outPut);
             Console.ReadLine();
         }
