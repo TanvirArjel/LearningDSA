@@ -5,7 +5,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructuresAndAlgorithms.DataStructures.Arrays;
+using DataStructuresAndAlgorithms.DataStructures.Trees;
+using DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -13,11 +14,14 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] arr1 = { 1, 3 };
-            int[] arr2 = { 2 };
-            double outPut = MedianOfTwoSortedArrays.Find(arr1, arr2);
-            Console.WriteLine(outPut);
-            Console.ReadLine();
+            BinaryTreeNode<int> root = new BinaryTreeNode<int>(27);
+            root.RightNode = new BinaryTreeNode<int>(34);
+            root.RightNode.RightNode = new BinaryTreeNode<int>(58);
+            root.RightNode.RightNode.LeftNode = new BinaryTreeNode<int>(50);
+            root.RightNode.RightNode.LeftNode.LeftNode = new BinaryTreeNode<int>(44);
+
+            int dist = MinimumDistanceBetweenAnyNodes.Find(root);
+            Console.WriteLine(dist);
         }
 
         private static int Method2()
