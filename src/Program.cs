@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataStructuresAndAlgorithms.DataStructures.Trees;
-using DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems;
+using DataStructuresAndAlgorithms.DynamicProgramming;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -20,8 +20,10 @@ namespace DataStructuresAndAlgorithms
             root.RightNode.RightNode.LeftNode = new BinaryTreeNode<int>(50);
             root.RightNode.RightNode.LeftNode.LeftNode = new BinaryTreeNode<int>(44);
 
-            int dist = MinimumDistanceBetweenAnyNodes.Find(root);
-            Console.WriteLine(dist);
+            ////int dist = MinimumDistanceBetweenAnyNodes.Find(root);
+
+            string v = FindLongestPalindromicSubstring.FindLPS3("babad");
+            Console.WriteLine(v);
         }
 
         private static int Method2()

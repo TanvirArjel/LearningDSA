@@ -2,6 +2,8 @@
 // Copyright (c) TanvirArjel. All rights reserved.
 // </copyright>
 
+using System;
+
 namespace DataStructuresAndAlgorithms.DynamicProgramming
 {
     public static class FindLongestPalindromicSubstring
@@ -35,55 +37,47 @@ namespace DataStructuresAndAlgorithms.DynamicProgramming
         }
 
         // Time Complexity: O(n^2) and Space Complexity: O(1)
-        public static string FindLPS2(string input)
+        public static string FindLPS2(string s)
         {
-            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            if (s == null || s == string.Empty)
             {
                 return string.Empty;
             }
 
-            int maxLength = 1; // The result (length of LPS)
+            int start = 0;
+            int maxLength = 1;
 
-            int palindromStart = 0;
-
-            int low, high;
-
-            // One by one consider every character as center point of even and odd length palindromes
-            for (int i = 1; i < input.Length; i++)
+            for (int i = 0; i < s.Length; i++)
             {
-                // Find the longest even length palindrome with center points as i-1 and i.
-                low = i - 1;
-                high = i;
-                while (low >= 0 && high < input.Length && input[low] == input[high])
+                int oddLength = LengthOfPalidrom(s, i, i);
+                int evenLength = LengthOfPalidrom(s, i, i + 1);
+
+                int length = Math.Max(oddLength, evenLength);
+
+                if (length > maxLength)
                 {
-                    if (high - low + 1 > maxLength)
-                    {
-                        palindromStart = low;
-                        maxLength = high - low + 1;
-                    }
-
-                    --low;
-                    ++high;
-                }
-
-                // Find the longest odd length palindrome with center point as i
-                low = i - 1;
-                high = i + 1;
-                while (low >= 0 && high < input.Length && input[low] == input[high])
-                {
-                    if (high - low + 1 > maxLength)
-                    {
-                        palindromStart = low;
-                        maxLength = high - low + 1;
-                    }
-
-                    --low;
-                    ++high;
+                    maxLength = length;
+                    start = i - ((maxLength - 1) / 2);
                 }
             }
 
-            string longestPalindrom = input.Substring(palindromStart, maxLength);
-            return longestPalindrom;
+            return s.Substring(start, maxLength);
+        }
+
+        public static int LengthOfPalidrom(string s, int left, int right)
+        {
+            if (s == null || s == string.Empty)
+            {
+                return 0;
+            }
+
+            while (left >= 0 && right < s.Length && s[left] == s[right])
+            {
+                left--;
+                right++;
+            }
+
+            return right - left - 1;
         }
 
         private static bool CheckIfPalindrom(string input)
