@@ -64,7 +64,7 @@ namespace DataStructuresAndAlgorithms.DynamicProgramming
             return s.Substring(start, maxLength);
         }
 
-        public static int LengthOfPalidrom(string s, int left, int right)
+        private static int LengthOfPalidrom(string s, int left, int right)
         {
             if (s == null || s == string.Empty)
             {
