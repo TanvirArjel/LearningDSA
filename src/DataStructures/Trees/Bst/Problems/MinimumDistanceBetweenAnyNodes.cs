@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="MinimumDistanceBetweenAnyNodes.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems
@@ -64,7 +68,6 @@ namespace DataStructuresAndAlgorithms.DataStructures.Trees.Bst.Problems
             GetListInorder(root.RightNode, list);
 
             return list;
-
         }
     }
 }

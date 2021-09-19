@@ -1,7 +1,13 @@
-﻿using System;
+﻿// <copyright file="MergeSort.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+using System;
 
 namespace DataStructuresAndAlgorithms.Algorithms.SortingAlgorithms
 {
+    // Time Complexity : O(nlog(n))
+    // Space Complexity : O(n)
     internal static class MergeSort
     {
         public static void Sort(int[] array)

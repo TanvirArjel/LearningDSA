@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Matrix
+﻿// <copyright file="TransposeMatrix.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Matrix
 {
     public static class TransposeMatrix
     {

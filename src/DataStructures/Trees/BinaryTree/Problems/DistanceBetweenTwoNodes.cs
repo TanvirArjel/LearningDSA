@@ -1,4 +1,8 @@
-﻿namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
+﻿// <copyright file="DistanceBetweenTwoNodes.cs" company="TanvirArjel">
+// Copyright (c) TanvirArjel. All rights reserved.
+// </copyright>
+
+namespace DataStructuresAndAlgorithms.DataStructures.Trees.BinaryTree.Problems
 {
     // Explanation: 1. First find the LCA between two nodes
     // 2. Find the distances between LCA and the two nodes.

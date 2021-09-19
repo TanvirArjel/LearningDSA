@@ -11,8 +11,8 @@ namespace DataStructuresAndAlgorithms
     {
         private static void Main()
         {
-            int[] arr = { 12, 11, 13, 5, 6, 7 };
-            MergeSort.Sort(arr);
+            int[] arr = { 7, 11, 13, 5, 6, 7 };
+            QuickSort.Sort(arr);
 
             foreach (int item in arr)
             {
