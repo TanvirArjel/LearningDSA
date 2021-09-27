@@ -26,10 +26,10 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                 }
 
                 // If left half is sorted
-                if (array[start] < array[mid])
+                if (start <= mid - 1 && array[start] <= array[mid - 1])
                 {
                     // check if key is present in the left half
-                    if (element >= array[start] && element <= array[mid])
+                    if (element >= array[start] && element <= array[mid - 1])
                     {
                         end = mid - 1;
                     }
@@ -38,11 +38,9 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                         start = mid + 1;
                     }
                 }
-
-                // If right half is sorted
                 else
                 {
-                    if (element > array[mid] && element <= array[end])
+                    if (mid + 1 <= end && element >= array[mid + 1] && element <= array[end])
                     {
                         start = mid + 1;
                     }
@@ -75,29 +73,29 @@ namespace DataStructuresAndAlgorithms.DataStructures.Arrays
                 return mid;
             }
 
-            // If the right part is sorted.
-            if (array[mid] <= array[end])
+            // If the left part is sorted.
+            if (start <= mid - 1 && array[start] <= array[mid - 1])
             {
-                if (element > array[mid] && element <= array[end])
+                if (element >= array[start] && element <= array[mid - 1])
                 {
-                    return FindRecursion(array, mid + 1, end, element);
+                    return FindRecursion(array, start, mid - 1, element);
                 }
                 else
                 {
-                    return FindRecursion(array, start, mid - 1, element);
+                    return FindRecursion(array, mid + 1, end, element);
                 }
             }
 
             // If the left part is sorted
             else
             {
-                if (element >= array[start] && element < array[mid])
+                if (mid - 1 <= end && element >= array[mid + 1] && element <= array[mid])
                 {
-                    return FindRecursion(array, start, mid - 1, element);
+                    return FindRecursion(array, mid + 1, end, element);
                 }
                 else
                 {
-                    return FindRecursion(array, mid + 1, end, element);
+                    return FindRecursion(array, start, mid - 1, element);
                 }
             }
         }

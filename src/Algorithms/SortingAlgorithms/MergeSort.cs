@@ -72,30 +72,22 @@ namespace DataStructuresAndAlgorithms.Algorithms.SortingAlgorithms
             {
                 if (leftArray[i] <= rightArray[j])
                 {
-                    array[k] = leftArray[i];
-                    i++;
+                    array[k++] = leftArray[i++];
                 }
                 else
                 {
-                    array[k] = rightArray[j];
-                    j++;
+                    array[k++] = rightArray[j++];
                 }
-
-                k++;
             }
 
             while (i < n1)
             {
-                array[k] = leftArray[i];
-                i++;
-                k++;
+                array[k++] = leftArray[i++];
             }
 
             while (j < n2)
             {
-                array[k] = rightArray[j];
-                j++;
-                k++;
+                array[k++] = rightArray[j++];
             }
         }
     }
