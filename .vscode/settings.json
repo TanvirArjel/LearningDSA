@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "xlocale": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp",
+        "queue": "cpp",
+        "ostream": "cpp",
+        "utility": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "xhash": "cpp",
+        "xmemory": "cpp",
+        "xutility": "cpp",
+        "stack": "cpp",
+        "xtr1common": "cpp"
+    },
+    "cSpell.words": [
+        "Dijkstras",
+        "Kruskals",
+        "topo"
+    ]
+}
