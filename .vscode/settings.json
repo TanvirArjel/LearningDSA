@@ -12,7 +12,8 @@
         "xmemory": "cpp",
         "xutility": "cpp",
         "stack": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "xstring": "cpp"
     },
     "cSpell.words": [
         "Dijkstras",

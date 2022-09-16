@@ -22,6 +22,6 @@ void reverse(vector<int>& nums, int i) {
 }
 
 int main() {
-    cout << "Hello World" << endl;
+    cout << "Hello Word" << endl;
     return 1;
 }
