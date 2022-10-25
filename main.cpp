@@ -5,23 +5,23 @@
 #include <unordered_set>
 #include <vector>
 
+#include "bit-manipulation/implement-set.h"
 #include "graph/KosarajusAlgorithm.h"
 
 using namespace std;
 
-// Functional recursion with single parameter.
-void reverse(vector<int>& nums, int i) {
-    if (i >= nums.size() / 2) {
-        return;
-    }
-
-    int j = nums.size() - 1 - i;
-    swap(nums[i], nums[j]);
-
-    reverse(nums, i + 1);
-}
-
 int main() {
-    cout << "Hello Word" << endl;
+    BitMaskSet* bitSet = new BitMaskSet();
+    bitSet->add(5);
+    bitSet->add(7);
+    bitSet->add(3);
+
+    bitSet->display();
+
+    cout << "Removed" << endl;
+
+    bitSet->remove(3);
+    bitSet->display();
+
     return 1;
 }
