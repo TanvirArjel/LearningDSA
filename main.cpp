@@ -5,23 +5,15 @@
 #include <unordered_set>
 #include <vector>
 
-#include "bit-manipulation/implement-set.h"
+#include "bit-manipulation/job_assignment.h"
 #include "graph/KosarajusAlgorithm.h"
 
 using namespace std;
 
 int main() {
-    BitMaskSet* bitSet = new BitMaskSet();
-    bitSet->add(5);
-    bitSet->add(7);
-    bitSet->add(3);
-
-    bitSet->display();
-
-    cout << "Removed" << endl;
-
-    bitSet->remove(3);
-    bitSet->display();
-
+    vector<vector<int>> cost = {{9, 2, 7, 8}, {6, 4, 3, 7}, {5, 8, 1, 8}, {7, 6, 9, 4}};
+    JobAssignment* jobAssignment = new JobAssignment();
+    int minCost = jobAssignment->findMinCost(cost);
+    cout << minCost << endl;
     return 1;
 }
